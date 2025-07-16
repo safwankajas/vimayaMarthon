@@ -1,7 +1,6 @@
 import { Box } from "@mui/material";
 import { Header } from "../components/header";
 import { HomePage } from "@/components/home";
-import { Overview } from "@/components/overview";
 
 export default function Home() {
   return (
