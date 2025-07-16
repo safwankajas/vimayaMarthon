@@ -146,14 +146,23 @@ export const Header = () => {
             {navItems.map((text) => (
               <>
                 <a href={`#${text.toLowerCase()}`}>
-                  <MenuItem key={text} component="li">
+                  <MenuItem
+                    sx={{
+                      "&:hover": {
+                        backgroundColor: "rgba(0, 0, 0, 0.05)",
+                        color: "#7B1E3A",
+                      },
+                    }}
+                    onClick={handleDrawerToggle}
+                    key={text}
+                    component="li"
+                  >
                     <ListItemText
                       primary={text}
                       primaryTypographyProps={{ fontWeight: 500 }}
                     />
                   </MenuItem>
                 </a>
-                <Divider sx={{ my: 0.5 }} />
               </>
             ))}
             <ListItem></ListItem>
