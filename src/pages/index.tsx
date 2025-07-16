@@ -11,10 +11,10 @@ export default function Home() {
       <Box id="about" sx={{ height: "1000px" }}>
         <>About</>
       </Box>
-      <Box sx={{ height: "1000px" }}>
+      <Box id="register" sx={{ height: "1000px" }}>
         <>Register</>
       </Box>
-      <Box sx={{ height: "1000px" }}>
+      <Box id="contact" sx={{ height: "1000px" }}>
         <>Contact</>
       </Box>
     </>
