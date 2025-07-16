@@ -86,6 +86,7 @@ export const Header = () => {
           <Box sx={{ display: { xs: "none", lg: "flex" }, gap: 4 }}>
             {navItems.map((item) => (
               <Button
+                href={`#${item.toLowerCase()}`}
                 key={item}
                 sx={{
                   color: textColor,
@@ -144,12 +145,14 @@ export const Header = () => {
           <MenuList>
             {navItems.map((text) => (
               <>
-                <MenuItem key={text} component="li">
-                  <ListItemText
-                    primary={text}
-                    primaryTypographyProps={{ fontWeight: 500 }}
-                  />
-                </MenuItem>
+                <a href={`#${text.toLowerCase()}`}>
+                  <MenuItem key={text} component="li">
+                    <ListItemText
+                      primary={text}
+                      primaryTypographyProps={{ fontWeight: 500 }}
+                    />
+                  </MenuItem>
+                </a>
                 <Divider sx={{ my: 0.5 }} />
               </>
             ))}

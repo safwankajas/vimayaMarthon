@@ -8,7 +8,7 @@ export default function Home() {
       <Box id="home" sx={{ height: "1000px" }}>
         <>home</>
       </Box>
-      <Box sx={{ height: "1000px" }}>
+      <Box id="about" sx={{ height: "1000px" }}>
         <>About</>
       </Box>
       <Box sx={{ height: "1000px" }}>
