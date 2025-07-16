@@ -60,10 +60,10 @@ export const Header = () => {
     handleScroll(); // Check once on load
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-  const bgColor = scrolled ? "rgba(0, 0, 0, 0.05)" : "#7B1E3A";
-  const textColor = !scrolled ? "#fff" : "#7B1E3A";
-  const ctcBgColor = !showCTA ? "rgba(0, 0, 0, 0.05)" : "#7B1E3A";
-  const ctcTextColor = scrolled ? "#fff" : "#7B1E3A";
+  const bgColor = !scrolled ? "rgba(0, 0, 0, 0.05)" : "#7B1E3A";
+  const textColor = scrolled ? "#fff" : "#7B1E3A";
+  const ctcBgColor = showCTA ? "rgba(0, 0, 0, 0.05)" : "#7B1E3A";
+  const ctcTextColor = !scrolled ? "#fff" : "#7B1E3A";
 
   return (
     <>
@@ -120,15 +120,15 @@ export const Header = () => {
               gap: 4,
               borderRadius: "8px",
               pointerEvents: showCTA ? "auto" : "none",
-              backgroundColor: ctcBgColor,
-              color: ctcTextColor,
+              backgroundColor: textColor,
+              color: bgColor,
               opacity: showCTA ? 1 : 0,
               textTransform: "none",
               transition: "opacity 0.3s ease",
               ...(showCTA && {
                 "&:hover": {
-                  backgroundColor: bgColor,
-                  color: textColor,
+                  backgroundColor: textColor,
+                  color: bgColor,
                 },
               }),
             }}
