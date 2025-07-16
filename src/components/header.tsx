@@ -18,6 +18,7 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
+import Image from "next/image";
 
 const navItems = ["Home", "About", "Register", "Contact"];
 
@@ -76,9 +77,14 @@ export const Header = () => {
         }}
       >
         <Toolbar sx={{ maxWidth: "1280px", width: "100%", margin: "0 auto" }}>
-          <Box sx={{ flexGrow: 1 }}>
-            <Typography variant="h6" fontWeight={600} sx={{ color: textColor }}>
-              vismaya
+          <Box sx={{ flexGrow: 1, display: "flex" }}>
+            <Image src="/vismaylogo.png" alt="Logo" width={40} height={40} />
+            <Typography
+              variant="h6"
+              fontWeight={600}
+              sx={{ ml: 1, color: textColor }}
+            >
+              vismayrun2025
             </Typography>
           </Box>
 
