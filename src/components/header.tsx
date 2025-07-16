@@ -12,6 +12,9 @@ import {
   List,
   ListItem,
   ListItemText,
+  MenuList,
+  MenuItem,
+  Divider,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
@@ -56,8 +59,10 @@ export const Header = () => {
     handleScroll(); // Check once on load
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-  const bgColor = !scrolled ? "rgba(0, 0, 0, 0.05)" : "#7B1E3A";
-  const textColor = scrolled ? "#fff" : "#7B1E3A";
+  const bgColor = scrolled ? "rgba(0, 0, 0, 0.05)" : "#7B1E3A";
+  const textColor = !scrolled ? "#fff" : "#7B1E3A";
+  const ctcBgColor = !showCTA ? "rgba(0, 0, 0, 0.05)" : "#7B1E3A";
+  const ctcTextColor = scrolled ? "#fff" : "#7B1E3A";
 
   return (
     <>
@@ -82,7 +87,11 @@ export const Header = () => {
             {navItems.map((item) => (
               <Button
                 key={item}
-                sx={{ color: textColor, fontWeight: 500 }}
+                sx={{
+                  color: textColor,
+                  fontWeight: 500,
+                  textTransform: "none",
+                }}
                 disableRipple
               >
                 {item}
@@ -95,18 +104,22 @@ export const Header = () => {
             sx={{
               mx: 3,
               gap: 4,
+              borderRadius: "8px",
               pointerEvents: showCTA ? "auto" : "none",
-              backgroundColor: "#2563eb",
+              backgroundColor: ctcBgColor,
+              color: ctcTextColor,
               opacity: showCTA ? 1 : 0,
+              textTransform: "none",
               transition: "opacity 0.3s ease",
               ...(showCTA && {
                 "&:hover": {
-                  backgroundColor: "#1d4ed8",
+                  backgroundColor: bgColor,
+                  color: textColor,
                 },
               }),
             }}
           >
-            Get started now
+            Register Now
           </Button>
           {/* Mobile menu toggle */}
           <IconButton
@@ -128,17 +141,20 @@ export const Header = () => {
         sx={{ display: { lg: "none" } }}
       >
         <Box sx={{ p: 2 }}>
-          <List>
+          <MenuList>
             {navItems.map((text) => (
-              <ListItem key={text} component="li">
-                <ListItemText
-                  primary={text}
-                  primaryTypographyProps={{ fontWeight: 500 }}
-                />
-              </ListItem>
+              <>
+                <MenuItem key={text} component="li">
+                  <ListItemText
+                    primary={text}
+                    primaryTypographyProps={{ fontWeight: 500 }}
+                  />
+                </MenuItem>
+                <Divider sx={{ my: 0.5 }} />
+              </>
             ))}
             <ListItem></ListItem>
-          </List>
+          </MenuList>
         </Box>
       </Drawer>
 
