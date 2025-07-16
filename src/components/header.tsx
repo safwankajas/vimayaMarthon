@@ -80,9 +80,16 @@ export const Header = () => {
           <Box sx={{ flexGrow: 1, display: "flex" }}>
             <Image src="/vismaylogo.png" alt="Logo" width={40} height={40} />
             <Typography
-              variant="h6"
               fontWeight={600}
-              sx={{ ml: 1, color: textColor }}
+              sx={{
+                ml: 1,
+                my: 1,
+                color: textColor,
+                fontSize: {
+                  xs: "15px",
+                  sm: "20px",
+                },
+              }}
             >
               vismayrun2025
             </Typography>
@@ -109,7 +116,7 @@ export const Header = () => {
             href="www.d.com"
             variant="contained"
             sx={{
-              mx: 3,
+              mx: 2,
               gap: 4,
               borderRadius: "8px",
               pointerEvents: showCTA ? "auto" : "none",
