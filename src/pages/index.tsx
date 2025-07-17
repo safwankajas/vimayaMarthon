@@ -6,7 +6,14 @@ export default function Home() {
   return (
     <>
       <Header />
-      <Box id="home" sx={{ height: "100vh" }}>
+      <Box
+        id="home"
+        sx={{
+          position: "relative",
+          height: "100vh",
+          overflow: "hidden",
+        }}
+      >
         <HomePage />
       </Box>
       <Box id="about" sx={{ height: "1000px" }}>
