@@ -63,7 +63,7 @@ export const HomePage = () => {
           color: "#fff",
           p: 4,
           borderRadius: 3,
-          width: { xs: "100%", md: "100%" },
+          width: { xs: "100%", md: "70%" },
           mx: "auto",
           mt: { xs: "-50%", md: "-5%" },
           transform: `translateY(${dynamicTranslate}px)`,
