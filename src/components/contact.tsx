@@ -41,7 +41,12 @@ export default function ContactUs() {
         >
           Contact Us
         </Typography>
-        <Typography variant="body1" color="text.secondary" mb={4}>
+        <Typography
+          variant="body1"
+          color="text.secondary"
+          sx={{ fontSize: { xs: 12, md: 20 } }}
+          mb={1}
+        >
           We’re here to help! Feel free to reach out to us.
         </Typography>
 
@@ -67,14 +72,22 @@ export default function ContactUs() {
         >
           <Stack alignItems="center" spacing={1}>
             <PhoneIcon sx={{ color: "#2563eb" }} />
-            <Typography variant="body1" color="text.secondary">
+            <Typography
+              sx={{ fontSize: { xs: 12, md: 20 } }}
+              variant="body1"
+              color="text.secondary"
+            >
               +91-9562415620
             </Typography>
           </Stack>
 
           <Stack alignItems="center" spacing={1}>
             <EmailIcon sx={{ color: "#2563eb" }} />
-            <Typography variant="body1" color="text.secondary">
+            <Typography
+              variant="body1"
+              color="text.secondary"
+              sx={{ fontSize: { xs: 12, md: 20 } }}
+            >
               event@vismayrun.com
             </Typography>
           </Stack>
