@@ -33,6 +33,7 @@ export const HomePage = () => {
           transform: `translateY(${offsetY * 0.3}px)`,
           transition: "transform 0.1s ease-out",
           zIndex: 1,
+          willChange: "transform",
         }}
       />
 
