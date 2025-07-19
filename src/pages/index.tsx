@@ -10,6 +10,7 @@ import SponsorsSection from "@/components/sponser";
 import MedalTShirtPreview from "@/components/shirtMedal";
 import ContactUs from "@/components/contact";
 import FAQSection from "@/components/faq";
+import Footer from "@/components/footer";
 
 export default function Home() {
   return (
@@ -47,6 +48,7 @@ export default function Home() {
         <ContactUs />
       </Box>
       <FAQSection />
+      <Footer />
     </>
   );
 }
