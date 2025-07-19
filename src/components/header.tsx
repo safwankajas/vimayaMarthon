@@ -43,21 +43,7 @@ export const Header = () => {
     };
 
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-  useEffect(() => {
-    const handleScroll = () => {
-      const homeSection = document.getElementById("home");
-      if (homeSection) {
-        const rect = homeSection.getBoundingClientRect();
-        const isHomeInView = rect.bottom > 0 && rect.top < window.innerHeight;
-
-        setShowCTA(!isHomeInView); // Show CTA only if home is NOT in view
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Check once on load
+    handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
   const bgColor = !scrolled ? "rgba(0, 0, 0, 0.05)" : "#7B1E3A";

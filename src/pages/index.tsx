@@ -2,6 +2,7 @@ import { Box } from "@mui/material";
 import { Header } from "../components/header";
 import { HomePage } from "@/components/home";
 import { AboutSection } from "@/components/about";
+import Register from "@/components/regiter";
 
 export default function Home() {
   return (
@@ -17,11 +18,11 @@ export default function Home() {
       >
         <HomePage />
       </Box>
-      <Box id="about" sx={{ height: "1000px" }}>
+      <Box id="about">
         <AboutSection />
       </Box>
-      <Box id="register" sx={{ height: "1000px" }}>
-        <>Register</>
+      <Box id="register" sx={{ height: "1000px", backgroundColor: "#fcefdc" }}>
+        <Register />
       </Box>
       <Box id="contact" sx={{ height: "1000px" }}>
         <>Contact</>
