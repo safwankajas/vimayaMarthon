@@ -33,7 +33,7 @@ const faqs = [
 export default function FAQSection() {
   return (
     <Box sx={{ py: 6, backgroundColor: "#fcefdc" }}>
-      <Container maxWidth="md">
+      <Container maxWidth="lg">
         <Typography
           variant="h4"
           fontWeight={700}
@@ -48,9 +48,9 @@ export default function FAQSection() {
           <Accordion
             key={index}
             sx={{
-              mb: "3px",
+              mb: "1px",
               borderRadius: 1,
-              backgroundColor: "#fff",
+              backgroundColor: "#d9d8d4",
               boxShadow: 2,
               "&::before": { display: "none" },
             }}
@@ -61,7 +61,7 @@ export default function FAQSection() {
             >
               <Typography fontWeight={600}>{faq.question}</Typography>
             </AccordionSummary>
-            <AccordionDetails sx={{ background: "#f0f0f0" }}>
+            <AccordionDetails sx={{ background: "#e6e4df" }}>
               <Typography>{faq.answer}</Typography>
             </AccordionDetails>
           </Accordion>

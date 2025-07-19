@@ -28,8 +28,8 @@ export default function SponsorsSection() {
             <Paper
               elevation={1}
               sx={{
-                width: 200,
-                height: 260,
+                width: { xs: 150, sm: 200 },
+                height: { xs: 200, sm: 260 },
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center",

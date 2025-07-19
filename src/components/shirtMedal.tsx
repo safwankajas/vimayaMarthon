@@ -24,8 +24,8 @@ export default function MedalTShirtPreview() {
             <Paper
               elevation={2}
               sx={{
-                width: 200,
-                height: 280,
+                width: { xs: 150, sm: 200 },
+                height: { xs: 230, sm: 280 },
                 p: 2,
                 borderRadius: 4,
                 display: "flex",
