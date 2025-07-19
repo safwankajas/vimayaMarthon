@@ -45,40 +45,39 @@ export default function InclusionsWithImages() {
         }}
       >
         {inclusions.map((item, index) => (
-          <Grid item xs={6} sm={3} key={index}>
+          <Box
+            key={index}
+            textAlign="center"
+            sx={{
+              // border: "1px dashed #7B1E3A",
+              borderRadius: "10px",
+              justifyContent: "space-between",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              textAlign: "center",
+            }}
+          >
             <Box
-              textAlign="center"
+              component="img"
+              src={item.img}
+              alt={item.label}
               sx={{
-                // border: "1px dashed #7B1E3A",
-                borderRadius: "10px",
-                justifyContent: "space-between",
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                textAlign: "center",
+                height: 70,
+                mb: 1,
+                objectFit: "contain",
               }}
+            />
+            <Typography
+              variant="body1"
+              color="text.primary"
+              fontWeight={"bold"}
+              px={1}
+              sx={{ fontSize: "10px" }}
             >
-              <Box
-                component="img"
-                src={item.img}
-                alt={item.label}
-                sx={{
-                  height: 70,
-                  mb: 1,
-                  objectFit: "contain",
-                }}
-              />
-              <Typography
-                variant="body1"
-                color="text.primary"
-                fontWeight={"bold"}
-                px={1}
-                sx={{ fontSize: "10px" }}
-              >
-                {item.label}
-              </Typography>
-            </Box>
-          </Grid>
+              {item.label}
+            </Typography>
+          </Box>
         ))}
       </Grid>
     </Box>
