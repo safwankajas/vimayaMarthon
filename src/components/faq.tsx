@@ -5,10 +5,9 @@ import {
   Typography,
   Box,
   Container,
-  Collapse,
+  Divider,
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import { styled } from "@mui/material/styles";
 
 const faqs = [
   {
@@ -32,37 +31,41 @@ const faqs = [
 
 export default function FAQSection() {
   return (
-    <Box sx={{ py: 6, backgroundColor: "#fcefdc" }}>
+    <Box sx={{ py: 2, backgroundColor: "#fcefdc" }}>
       <Container maxWidth="lg">
         <Typography
           variant="h4"
           fontWeight={700}
           textAlign="center"
-          mb={4}
-          color="#7B1E3A"
+          mb={2}
+          sx={{ color: "#1a1a1a" }}
         >
-          FAQs
+          Frequently Asked Questions
         </Typography>
 
         {faqs.map((faq, index) => (
           <Accordion
             key={index}
+            disableGutters
+            elevation={0}
+            square
             sx={{
-              mb: "1px",
-              borderRadius: 1,
-              backgroundColor: "#d9d8d4",
-              boxShadow: 2,
+              backgroundColor: "#fff",
+              borderBottom: "1px solid #ddd",
               "&::before": { display: "none" },
             }}
-            slotProps={{ transition: { timeout: 250 } }}
           >
             <AccordionSummary
-              expandIcon={<ExpandMoreIcon sx={{ color: "#7B1E3A" }} />}
+              expandIcon={<ExpandMoreIcon sx={{ color: "#333" }} />}
+              aria-controls={`faq-content-${index}`}
+              id={`faq-header-${index}`}
             >
-              <Typography fontWeight={600}>{faq.question}</Typography>
+              <Typography sx={{ fontWeight: 500, color: "#333" }}>
+                {faq.question}
+              </Typography>
             </AccordionSummary>
-            <AccordionDetails sx={{ background: "#e6e4df" }}>
-              <Typography>{faq.answer}</Typography>
+            <AccordionDetails sx={{ py: 1 }}>
+              <Typography sx={{ color: "#555" }}>{faq.answer}</Typography>
             </AccordionDetails>
           </Accordion>
         ))}
