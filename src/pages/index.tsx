@@ -1,6 +1,7 @@
 import { Box } from "@mui/material";
 import { Header } from "../components/header";
 import { HomePage } from "@/components/home";
+import { AboutSection } from "@/components/about";
 
 export default function Home() {
   return (
@@ -17,7 +18,7 @@ export default function Home() {
         <HomePage />
       </Box>
       <Box id="about" sx={{ height: "1000px" }}>
-        <>About</>
+        <AboutSection />
       </Box>
       <Box id="register" sx={{ height: "1000px" }}>
         <>Register</>

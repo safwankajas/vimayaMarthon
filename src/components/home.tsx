@@ -72,8 +72,11 @@ export const HomePage = () => {
           zIndex: 3,
         }}
       >
-        <Typography variant="subtitle1" mt={1}>
+        <Typography variant="body2" mt={2}>
           October 5, 2025 | Durbar Hall, Ernakulam
+        </Typography>
+        <Typography variant="body2" mt={0.5}>
+          Reporting: 5:30 AM | Flag-off: 6:00 AM
         </Typography>
         <Button
           variant="contained"
@@ -96,12 +99,12 @@ export const HomePage = () => {
         </Typography>
 
         <Typography ref={stopRef} variant="body1">
-          Vismay Run 2025 – All Women Marathon is a celebration of womanhood,
-          endurance, and community strength. Organized by the Rotary Club of
-          Tripunithura Royale, this landmark event is designed to empower women
-          through fitness, wellness, and purpose. Join thousands of women from
-          all walks of life as they run together for a cause that will help to
-          provide insulin pumps for children suffering from Type-1 Diabetes.
+          All Women Marathon is a celebration of womanhood, endurance, and
+          community strength. Organized by the Rotary Club of Tripunithura
+          Royale, this landmark event is designed to empower women through
+          fitness, wellness, and purpose. Join thousands of women from all walks
+          of life as they run together for a cause that will help to provide
+          insulin pumps for children suffering from Type-1 Diabetes.
         </Typography>
       </Box>
     </>
