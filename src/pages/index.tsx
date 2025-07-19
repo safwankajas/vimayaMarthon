@@ -43,9 +43,8 @@ export default function Home() {
       <Box sx={{ backgroundColor: "#fcefdc" }}>
         <SponsorsSection />
       </Box>
-      <Box id="contact" sx={{ height: "400px" }}>
-        <>contact</>
-        {/* <ContactUs /> */}
+      <Box id="contact">
+        <ContactUs />
       </Box>
       <FAQSection />
     </>

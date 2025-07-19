@@ -16,11 +16,9 @@ export default function InclusionsWithImages() {
   return (
     <Box
       sx={{
-        backgroundColor: "#fcefdc",
+        backgroundColor: "#fff",
         py: 6,
         px: { xs: 2, md: 6 },
-        borderTop: "4px solid #7B1E3A",
-        borderBottom: "4px solid #7B1E3A",
       }}
     >
       <Typography
