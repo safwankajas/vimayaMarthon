@@ -3,6 +3,7 @@ import { Header } from "../components/header";
 import { HomePage } from "@/components/home";
 import { AboutSection } from "@/components/about";
 import Register from "@/components/regiter";
+import InclusionsSection from "@/components/include";
 
 export default function Home() {
   return (
@@ -24,8 +25,8 @@ export default function Home() {
       <Box id="register" sx={{ backgroundColor: "#fcefdc" }}>
         <Register />
       </Box>
-      <Box id="contact" sx={{ height: "1000px" }}>
-        <>Contact</>
+      <Box id="contact" sx={{}}>
+        <InclusionsSection />
       </Box>
     </>
   );
