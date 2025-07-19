@@ -21,7 +21,7 @@ export default function Home() {
       <Box id="about">
         <AboutSection />
       </Box>
-      <Box id="register" sx={{ height: "1000px", backgroundColor: "#fcefdc" }}>
+      <Box id="register" sx={{ backgroundColor: "#fcefdc" }}>
         <Register />
       </Box>
       <Box id="contact" sx={{ height: "1000px" }}>
