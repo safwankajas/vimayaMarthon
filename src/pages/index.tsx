@@ -6,6 +6,8 @@ import Register from "@/components/regiter";
 import InclusionsSection from "@/components/include";
 import RouteSafety from "@/components/route";
 import EventLocation from "@/components/route";
+import SponsorsSection from "@/components/sponser";
+import MedalTShirtPreview from "@/components/shirtMedal";
 
 export default function Home() {
   return (
@@ -32,6 +34,12 @@ export default function Home() {
       </Box>
       <Box>
         <EventLocation />
+      </Box>
+      <Box sx={{}}>
+        <MedalTShirtPreview />
+      </Box>
+      <Box sx={{ backgroundColor: "#fcefdc" }}>
+        <SponsorsSection />
       </Box>
     </>
   );
