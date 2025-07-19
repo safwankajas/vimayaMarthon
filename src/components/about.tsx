@@ -56,6 +56,7 @@ export const AboutSection = () => {
         sx={{
           flex: 1,
           position: "relative",
+          aspectRatio: "16 / 9",
           borderRadius: 2,
           overflow: "hidden",
         }}
@@ -73,14 +74,14 @@ export const AboutSection = () => {
           onAutoplayTimeLeft={onAutoplayTimeLeft}
           style={{ borderRadius: 12, height: "100%" }}
         >
-          {["/Home.jpg", "/Home1.jpg"].map((src, i) => (
+          {["/vimayphoto1.jpg", "/vismayphoto2.jpg"].map((src, i) => (
             <SwiperSlide key={i}>
               <Card sx={{ height: { xs: 300, md: 400 } }}>
                 <Image
                   src={src}
                   alt={`Slide ${i + 1}`}
-                  width={600}
-                  height={400}
+                  width={800}
+                  height={600}
                   style={{
                     width: "100%",
                     height: "100%",
