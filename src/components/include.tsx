@@ -5,14 +5,11 @@ const inclusions = [
   { label: "Branded T-Shirt", img: "/shirt.png" },
   { label: "Finisher Medal", img: "/medal.png" },
   { label: "Bib Number", img: "/bib.png" },
-  { label: `Refreshments & Hydration`, img: "/water.png" },
-  {
-    label: "E-Certificate",
-    img: "/cert.png",
-  },
-  { label: "Medical & Emergency Support", img: "/med.png" },
-  { label: "Other goodies in run kit", img: "/gift.png" },
-  { label: "Attractive Offer coupons", img: "/offer.png" },
+  { label: `Refreshments &\nHydration`, img: "/water.png" },
+  { label: "Other goodies\n in run kit", img: "/gift.png" },
+  { label: "E-Certificate", img: "/cert.png" },
+  { label: "Medical & \nEmergency Support", img: "/med.png" },
+  { label: "Attractive Offer\n coupons", img: "/offer.png" },
 ];
 
 export default function InclusionsWithImages() {
@@ -63,8 +60,8 @@ export default function InclusionsWithImages() {
               src={item.img}
               alt={item.label}
               sx={{
-                height: 70,
-                mb: 1,
+                height: 80,
+
                 objectFit: "contain",
               }}
             />
@@ -73,7 +70,11 @@ export default function InclusionsWithImages() {
               color="text.primary"
               fontWeight={"bold"}
               px={1}
-              sx={{ fontSize: "10px" }}
+              sx={{
+                fontSize: "10px",
+                whiteSpace: "pre-line",
+                textAlign: "center",
+              }}
             >
               {item.label}
             </Typography>
