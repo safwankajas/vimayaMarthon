@@ -4,6 +4,8 @@ import { HomePage } from "@/components/home";
 import { AboutSection } from "@/components/about";
 import Register from "@/components/regiter";
 import InclusionsSection from "@/components/include";
+import RouteSafety from "@/components/route";
+import EventLocation from "@/components/route";
 
 export default function Home() {
   return (
@@ -27,6 +29,9 @@ export default function Home() {
       </Box>
       <Box id="contact" sx={{}}>
         <InclusionsSection />
+      </Box>
+      <Box>
+        <EventLocation />
       </Box>
     </>
   );
