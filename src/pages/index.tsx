@@ -8,6 +8,8 @@ import RouteSafety from "@/components/route";
 import EventLocation from "@/components/route";
 import SponsorsSection from "@/components/sponser";
 import MedalTShirtPreview from "@/components/shirtMedal";
+import ContactUs from "@/components/contact";
+import FAQSection from "@/components/faq";
 
 export default function Home() {
   return (
@@ -29,7 +31,7 @@ export default function Home() {
       <Box id="register" sx={{ backgroundColor: "#fcefdc" }}>
         <Register />
       </Box>
-      <Box id="contact" sx={{}}>
+      <Box sx={{}}>
         <InclusionsSection />
       </Box>
       <Box>
@@ -41,6 +43,11 @@ export default function Home() {
       <Box sx={{ backgroundColor: "#fcefdc" }}>
         <SponsorsSection />
       </Box>
+      <Box id="contact" sx={{ height: "400px" }}>
+        <>contact</>
+        {/* <ContactUs /> */}
+      </Box>
+      <FAQSection />
     </>
   );
 }
