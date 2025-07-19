@@ -37,18 +37,77 @@ export const AboutSection = () => {
       <Box
         sx={{
           flex: 1,
+          display: "flex",
+          flexDirection: "column",
+          gap: 2, // spacing between halves
         }}
       >
-        <Typography variant="h5" fontWeight="bold" mb={1}>
-          About the Event
-        </Typography>
-        <Typography variant="body1">
-          Vismay Run 2025 isn’t just a marathon—it’s a movement. It’s about
-          unity, strength, and creating a platform where every woman, no matter
-          her age or background, can run for health, confidence, and a cause.
-          With professional organization and community involvement, the event
-          ensures safety, support, and celebration every step of the way
-        </Typography>
+        {/* Top Half */}
+        <Box sx={{ flex: 1 }}>
+          <Typography variant="h5" fontWeight="bold" mb={1}>
+            About the Event
+          </Typography>
+          <Typography variant="body1">
+            Vismay Run 2025 isn’t just a marathon—it’s a movement. It’s about
+            unity, strength, and creating a platform where every woman, no
+            matter her age or background, can run for health, confidence, and a
+            cause. With professional organization and community involvement, the
+            event ensures safety, support, and celebration every step of the
+            way.
+          </Typography>
+        </Box>
+
+        {/* Bottom Half */}
+        <Box
+          sx={{
+            flex: 1,
+            p: 1,
+            borderRadius: 4,
+            backdropFilter: "blur(10px)",
+            background: "rgba(255, 255, 255, 0.1)",
+            border: "1px solid rgba(255, 255, 255, 0.2)",
+            color: "#fff",
+            textAlign: "center",
+            display: { md: "flex", xs: "none" },
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center", // vertical center
+            width: { xs: "100%", md: "100%" },
+            gap: 2,
+            mx: "auto", // horizontal center in parent
+          }}
+        >
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+              p: 2,
+              borderRadius: 4,
+              backdropFilter: "blur(10px)",
+              backgroundColor: "rgba(255, 255, 255, 0.1)",
+              border: "1px solid rgba(255, 255, 255, 0.2)",
+            }}
+          >
+            <Typography variant="h5" fontWeight="bold" mb={-4}>
+              Organized by
+            </Typography>
+            <Image
+              src="/rotat emplo.png"
+              alt="Rotary Club of Tripunithura Royale"
+              width={150}
+              height={150}
+              style={{ objectFit: "contain" }}
+            />
+
+            <Typography variant="body1" sx={{ mt: -3 }}>
+              With a legacy of service and community leadership, the Rotary Club
+              continues to uplift society through housing projects, health and
+              empowerment initiatives.
+            </Typography>
+          </Box>
+        </Box>
       </Box>
 
       {/* Right Box (Swiper Gallery) */}
@@ -132,6 +191,57 @@ export const AboutSection = () => {
             <span ref={progressContent} />
           </Box>
         </Swiper>
+      </Box>
+
+      <Box
+        sx={{
+          flex: 1,
+          p: 1,
+          borderRadius: 4,
+          backdropFilter: "blur(10px)",
+          background: "rgba(255, 255, 255, 0.1)",
+          border: "1px solid rgba(255, 255, 255, 0.2)",
+          color: "#fff",
+          textAlign: "center",
+          display: { xs: "flex", md: "none" },
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center", // vertical center
+          width: { xs: "100%", md: "100%" },
+          gap: 2,
+          mx: "auto", // horizontal center in parent
+        }}
+      >
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+            p: 2,
+            borderRadius: 4,
+            backdropFilter: "blur(10px)",
+            backgroundColor: "rgba(255, 255, 255, 0.1)",
+            border: "1px solid rgba(255, 255, 255, 0.2)",
+          }}
+        >
+          <Typography variant="h5" fontWeight="bold" mb={-4}>
+            Organized by
+          </Typography>
+          <Image
+            src="/rotat emplo.png"
+            alt="Rotary Club of Tripunithura Royale"
+            width={150}
+            height={150}
+            style={{ objectFit: "contain" }}
+          />
+
+          <Typography variant="body1" sx={{ mt: -3 }}>
+            With a legacy of service and community leadership, the Rotary Club
+            continues to uplift society through housing projects, health and
+            empowerment initiatives.
+          </Typography>
+        </Box>
       </Box>
     </Box>
   );
