@@ -76,21 +76,25 @@ export const Header = () => {
             flexWrap: "wrap",
             justifyContent: "space-between",
             alignItems: "center",
-            padding: { xs: 1, md: 0 },
+            paddingY: { xs: "4px", md: 0 },
           }}
         >
           {/* Mobile logos row */}
-          <Box
-            sx={{
-              display: { xs: "flex", lg: "none" },
-              justifyContent: "space-around",
-              width: "100%",
-              gap: 2,
-              mb: 1,
-            }}
-          >
-            {["VISMAY RUN LOGO 1.png", "rotat emp.png", "vismay log 2.png"].map(
-              (src, i) => (
+          {!showCTA ? (
+            <Box
+              sx={{
+                display: { xs: "flex", lg: "none" },
+                justifyContent: "space-around",
+                width: "100%",
+                gap: 2,
+                mb: 1,
+              }}
+            >
+              {[
+                "VISMAY RUN LOGO 1.png",
+                "rotat emp.png",
+                "vismay log 2.png",
+              ].map((src, i) => (
                 <Image
                   key={i}
                   src={`/${src}`}
@@ -100,57 +104,56 @@ export const Header = () => {
                   style={{ objectFit: "contain" }}
                   priority
                 />
-              )
-            )}
-          </Box>
-
-          {/* Mobile: Register button + menu icon */}
-          <Box
-            sx={{
-              display: { xs: "flex", lg: "none" },
-              justifyContent: "space-between",
-              alignItems: "center",
-              width: "100%",
-              mb: 1,
-            }}
-          >
-            <Button
-              href="#register"
-              variant="contained"
+              ))}
+            </Box>
+          ) : (
+            <Box
               sx={{
-                backgroundColor: textColor,
-                color: bgColor,
-                fontWeight: 600,
-                pointerEvents: showCTA ? "auto" : "none",
-                opacity: showCTA ? 1 : 0,
-                ...(showCTA && {
-                  "&:hover": {
-                    backgroundColor: textColor,
-                    color: bgColor,
-                  },
-                }),
-                textTransform: "none",
-                borderRadius: 2,
-                fontSize: 14,
-                px: 2,
-                "&:hover": {
-                  backgroundColor: textColor,
-                  opacity: 0.9,
-                },
+                zIndex: 10,
+                display: { xs: "flex", lg: "none" },
+                justifyContent: "space-between",
+                alignItems: "center",
+                width: "100%",
+                mb: 1,
               }}
             >
-              Register Now
-            </Button>
+              <Button
+                href="#register"
+                variant="contained"
+                sx={{
+                  backgroundColor: textColor,
+                  color: bgColor,
+                  fontWeight: 600,
+                  pointerEvents: showCTA ? "auto" : "none",
+                  opacity: showCTA ? 1 : 0,
+                  ...(showCTA && {
+                    "&:hover": {
+                      backgroundColor: textColor,
+                      color: bgColor,
+                    },
+                  }),
+                  textTransform: "none",
+                  borderRadius: 2,
+                  fontSize: 14,
+                  px: 2,
+                  "&:hover": {
+                    backgroundColor: textColor,
+                    opacity: 0.9,
+                  },
+                }}
+              >
+                Register Now
+              </Button>
 
-            <IconButton
-              onClick={handleDrawerToggle}
-              sx={{ color: textColor }}
-              aria-label="menu"
-            >
-              {mobileOpen ? <CloseIcon /> : <MenuIcon />}
-            </IconButton>
-          </Box>
-
+              <IconButton
+                onClick={handleDrawerToggle}
+                sx={{ color: textColor }}
+                aria-label="menu"
+              >
+                {mobileOpen ? <CloseIcon /> : <MenuIcon />}
+              </IconButton>
+            </Box>
+          )}
           {/* Desktop header */}
           <Box
             sx={{
