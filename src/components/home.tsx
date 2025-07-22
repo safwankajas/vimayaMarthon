@@ -88,7 +88,7 @@ export const HomePage = () => {
             October 5, 2025 | Durbar Hall, Ernakulam
           </Typography>
           <Typography variant="body2" mt={0.5}>
-            Reporting: 5:30 AM | Flag-off: 6:00 AM
+            Reporting: 5:30 AM | Flag-off: 6:30 AM
           </Typography>
           <Button
             variant="contained"

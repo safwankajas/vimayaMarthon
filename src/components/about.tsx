@@ -90,18 +90,18 @@ export const AboutSection = () => {
               border: "1px solid rgba(255, 255, 255, 0.2)",
             }}
           >
-            <Typography variant="h5" fontWeight="bold" mb={-4}>
+            <Typography variant="h5" fontWeight="bold" mb={1}>
               Organized by
             </Typography>
             <Image
-              src="/rotat emplo.png"
+              src="/rotat emp.png"
               alt="Rotary Club of Tripunithura Royale"
               width={150}
               height={150}
               style={{ objectFit: "contain" }}
             />
 
-            <Typography variant="body1" sx={{ mt: -3 }}>
+            <Typography variant="body1" sx={{ mt: 1 }}>
               With a legacy of service and community leadership, the Rotary Club
               continues to uplift society through housing projects, health and
               empowerment initiatives.
@@ -225,18 +225,18 @@ export const AboutSection = () => {
             border: "1px solid rgba(255, 255, 255, 0.2)",
           }}
         >
-          <Typography variant="h5" fontWeight="bold" mb={-4}>
+          <Typography variant="h5" fontWeight="bold" mb={1}>
             Organized by
           </Typography>
           <Image
-            src="/rotat emplo.png"
+            src="/rotat emp.png"
             alt="Rotary Club of Tripunithura Royale"
             width={150}
             height={150}
             style={{ objectFit: "contain" }}
           />
 
-          <Typography variant="body1" sx={{ mt: -3 }}>
+          <Typography variant="body1" sx={{ mt: 1 }}>
             With a legacy of service and community leadership, the Rotary Club
             continues to uplift society through housing projects, health and
             empowerment initiatives.
