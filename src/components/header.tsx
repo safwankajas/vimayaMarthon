@@ -31,15 +31,20 @@ export const Header = () => {
   const [showCTA, setShowCTA] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-
+  const logoImages = [
+    "VISMAY RUN LOGO 1.png",
+    "rotat emp.png",
+    "vismay log 2.png",
+  ];
   // Toggle mobile drawer
   const handleDrawerToggle = () => {
     setMobileOpen((prev) => !prev);
   };
+  const [currentLogoIndex, setCurrentLogoIndex] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 10);
+      setScrolled(window.scrollY > 150);
       const homeSection = document.getElementById("home");
       if (homeSection) {
         const rect = homeSection.getBoundingClientRect();
@@ -51,6 +56,13 @@ export const Header = () => {
     window.addEventListener("scroll", handleScroll);
     handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentLogoIndex((prevIndex) => (prevIndex + 1) % logoImages.length);
+    }, 2000); // Change every 2 seconds
+
+    return () => clearInterval(interval);
   }, []);
 
   // Colors based on scroll
@@ -114,44 +126,58 @@ export const Header = () => {
                 justifyContent: "space-between",
                 alignItems: "center",
                 width: "100%",
-                mb: 1,
+                // mb: 1,
+                p: "5px",
               }}
             >
-              <Button
-                href="#register"
-                variant="contained"
-                sx={{
-                  backgroundColor: textColor,
-                  color: bgColor,
-                  fontWeight: 600,
-                  pointerEvents: showCTA ? "auto" : "none",
-                  opacity: showCTA ? 1 : 0,
-                  ...(showCTA && {
+              <>
+                <Image
+                  key={`Logo ${currentLogoIndex + 1}`}
+                  src={`/${logoImages[currentLogoIndex]}`}
+                  alt={`Logo ${currentLogoIndex + 1}`}
+                  width={100}
+                  height={100}
+                  style={{ objectFit: "contain" }}
+                  priority
+                />
+              </>
+              <Box>
+                <Button
+                  href="#register"
+                  variant="contained"
+                  sx={{
+                    backgroundColor: textColor,
+                    color: bgColor,
+                    fontWeight: 600,
+                    pointerEvents: showCTA ? "auto" : "none",
+                    opacity: showCTA ? 1 : 0,
+                    ...(showCTA && {
+                      "&:hover": {
+                        backgroundColor: textColor,
+                        color: bgColor,
+                      },
+                    }),
+                    textTransform: "none",
+                    borderRadius: 2,
+                    fontSize: 14,
+                    px: 2,
                     "&:hover": {
                       backgroundColor: textColor,
-                      color: bgColor,
+                      opacity: 0.9,
                     },
-                  }),
-                  textTransform: "none",
-                  borderRadius: 2,
-                  fontSize: 14,
-                  px: 2,
-                  "&:hover": {
-                    backgroundColor: textColor,
-                    opacity: 0.9,
-                  },
-                }}
-              >
-                Register Now
-              </Button>
+                  }}
+                >
+                  Register Now
+                </Button>
 
-              <IconButton
-                onClick={handleDrawerToggle}
-                sx={{ color: textColor }}
-                aria-label="menu"
-              >
-                {mobileOpen ? <CloseIcon /> : <MenuIcon />}
-              </IconButton>
+                <IconButton
+                  onClick={handleDrawerToggle}
+                  sx={{ color: textColor }}
+                  aria-label="menu"
+                >
+                  {mobileOpen ? <CloseIcon /> : <MenuIcon />}
+                </IconButton>
+              </Box>
             </Box>
           )}
           {/* Desktop header */}
