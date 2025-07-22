@@ -4,7 +4,7 @@ import { Box, Stepper, Step, StepLabel, Typography } from "@mui/material";
 const steps = [
   "Click on “Register Now” button.",
   "Fill in participant details.",
-  "Choose your category",
+  "Choose your T-shirt size",
   "Make secure payment",
 ];
 

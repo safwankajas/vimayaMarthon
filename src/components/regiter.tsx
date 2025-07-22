@@ -171,7 +171,7 @@ const Register = () => {
               variant="subtitle1"
               sx={{ fontWeight: "bold", color: "#7B1E3A" }}
             >
-              ₹499 for 5 KM
+              ₹399 for 5 KM
             </Typography>
             <Button
               variant="outlined"
