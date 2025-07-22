@@ -7,7 +7,7 @@ const inclusions = [
   { label: "Bib Number", img: "/bib.png" },
   { label: `Refreshments &\nHydration`, img: "/water.png" },
   { label: "Other goodies\n in run kit", img: "/gift.png" },
-  { label: "E-Certificate", img: "/cert.png" },
+  // { label: "E-Certificate", img: "/cert.png" },
   { label: "Medical & \nEmergency Support", img: "/med.png" },
   { label: "Attractive Offer\n coupons", img: "/offer.png" },
 ];
