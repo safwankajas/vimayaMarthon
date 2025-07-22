@@ -42,13 +42,13 @@ export default function Home() {
       <Box>
         <EventLocation />
       </Box>
-      <Box sx={{}}>
+      {/* <Box sx={{}}>
         <MedalTShirtPreview />
-      </Box>
-      <Box sx={{ backgroundColor: "#fcefdc" }}>
+      </Box> */}
+      <Box sx={{}}>
         <SponsorsSection />
       </Box>
-      <Box id="contact">
+      <Box sx={{ background: "#620b38" }} id="contact">
         <ContactUs />
       </Box>
       <FAQSection />

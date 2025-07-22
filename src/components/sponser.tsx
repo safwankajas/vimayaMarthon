@@ -1,55 +1,96 @@
-import { Box, Typography, Grid, Paper } from "@mui/material";
-import Image from "next/image"; // Use this if you're in Next.js, else use <img>
+"use client";
 
-const sponsors = [
+import { Box, Typography, Grid, Paper, Stack } from "@mui/material";
+import Image from "next/image";
+
+const organizer = {
+  label: "Title sponsor",
+  img: "/VISMAY LOGO.png", // Replace with your actual organizer logo path
+};
+
+const supportingPartners = [
   {
-    label: "Title Sponsor ",
-    img: "/VISMAY RUN LOGO 1 with back.png", // Replace with uploaded image path
+    label: "Transport partner",
+    img: "/KMRL_log.png",
   },
   {
-    label: "Presented By ",
-    img: "/rotat emp.png", // Replace with uploaded image path
+    label: "Banking Partner",
+    img: "/SIB_logo.png",
   },
   {
-    label: "Banking partner",
-    img: "/sbi.png", // Your uploaded image path
+    label: "Refreshment Partner",
+    img: "/Fruitbae_logo.jpg",
   },
 ];
 
 export default function SponsorsSection() {
   return (
     <Box sx={{ py: 6, px: 2, textAlign: "center" }}>
-      <Typography variant="h4" fontWeight={700} mb={4}>
-        Sponsors & Partners
+      <Typography variant="h4" fontWeight={700}>
+        Our Partners & Sponsors
       </Typography>
-      <Grid container spacing={4} justifyContent="center">
-        {sponsors.map((sponsor, idx) => (
+      <Typography variant="subtitle1" color="text.secondary" mt={1} mb={4}>
+        Thank you to our amazing partners who make this event possible
+      </Typography>
+
+      {/* Organizer */}
+
+      <Box mt={1} mb={1}>
+        <Typography variant="h6" fontWeight={700} gutterBottom>
+          {organizer.label}
+        </Typography>
+        <Box
+          sx={{
+            my: -10,
+            width: 250,
+            mx: "auto",
+            position: "relative",
+            height: 250,
+          }}
+        >
+          <Image
+            src={organizer.img}
+            alt={organizer.label}
+            fill
+            style={{ objectFit: "contain" }}
+          />
+        </Box>
+      </Box>
+
+      {/* Supporting Partners */}
+      <Typography variant="h6" fontWeight={700} gutterBottom>
+        Supporting Partners
+      </Typography>
+      <Grid container spacing={3} justifyContent="center">
+        {supportingPartners.map((partner, idx) => (
           <Box key={idx}>
             <Paper
-              elevation={1}
+              elevation={2}
               sx={{
-                width: { xs: 150, sm: 200 },
-                height: { xs: 200, sm: 260 },
+                borderRadius: 2,
+                py: 3,
+                px: 2,
+                height: "100%",
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center",
-                justifyContent: "center",
-                p: 2,
-                border: "1px solid #e0e0e0",
               }}
             >
-              <Typography variant="subtitle1" mb={1}>
-                {sponsor.label}
-              </Typography>
-              {/* Use next/image for optimized image loading if Next.js */}
-              <Box sx={{ width: 120, height: 120, position: "relative" }}>
+              <Box sx={{ width: 100, height: 60, position: "relative", mb: 2 }}>
                 <Image
-                  src={sponsor.img}
-                  alt={sponsor.label}
+                  src={partner.img}
+                  alt={partner.label}
                   fill
                   style={{ objectFit: "contain" }}
                 />
               </Box>
+              <Typography
+                variant="body2"
+                fontWeight={500}
+                color="text.secondary"
+              >
+                {partner.label}
+              </Typography>
             </Paper>
           </Box>
         ))}

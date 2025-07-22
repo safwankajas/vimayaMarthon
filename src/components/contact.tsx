@@ -19,7 +19,7 @@ export default function ContactUs() {
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
   return (
-    <Box sx={{ py: 2, px: 2, backgroundColor: "#fdfdfd" }}>
+    <Box sx={{ py: 3, px: 3 }}>
       <Paper
         elevation={6}
         sx={{
@@ -70,10 +70,10 @@ export default function ContactUs() {
           divider={<Divider orientation="vertical" flexItem />}
           sx={{ mb: 4, mt: 4 }}
         >
-          <Stack alignItems="center" spacing={1}>
+          <Stack sx={{ width: "50%" }} alignItems="center" spacing={1}>
             <PhoneIcon sx={{ color: "#2563eb" }} />
             <Typography
-              sx={{ fontSize: { xs: 12, md: 20 } }}
+              sx={{ fontSize: { xs: 10, md: 20 } }}
               variant="body1"
               color="text.secondary"
             >
@@ -86,7 +86,7 @@ export default function ContactUs() {
             <Typography
               variant="body1"
               color="text.secondary"
-              sx={{ fontSize: { xs: 12, md: 20 } }}
+              sx={{ fontSize: { xs: 10, md: 20 } }}
             >
               rctripunithuraroyale24@gmail.com
             </Typography>
