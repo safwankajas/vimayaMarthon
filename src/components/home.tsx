@@ -85,7 +85,7 @@ export const HomePage = () => {
           }}
         >
           <Typography variant="body2" mt={2}>
-            October 5, 2025 | Durbar Hall, Ernakulam
+            October 5, 2025 | Durbar Hall Ground, Ernakulam
           </Typography>
           <Typography variant="body2" mt={0.5}>
             Reporting: 5:30 AM | Flag-off: 6:30 AM

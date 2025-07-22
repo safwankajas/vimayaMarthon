@@ -52,13 +52,13 @@ export default function EventLocation() {
           </Typography>
 
           <Typography variant="body1" sx={{ mb: 1 }}>
-            Join us at Durbar Hall, Ernakulam, for a memorable marathon
+            Join us at Durbar Hall Ground, Ernakulam, for a memorable marathon
             celebrating women’s strength and community spirit on{" "}
             <strong>October 5th, 2025</strong>.
           </Typography>
 
           <Typography fontWeight={"bold"} sx={{ mb: 2 }}>
-            Durbar Hall, Ernakulam | 5:30 AM
+            Durbar Hall Ground, Ernakulam | 5:30 AM
           </Typography>
         </CardContent>
         <Box
