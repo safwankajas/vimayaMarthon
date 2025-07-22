@@ -50,7 +50,7 @@ export default function ContactUs() {
           We’re here to help! Feel free to reach out to us.
         </Typography>
 
-        <Typography
+        {/* <Typography
           mb={2}
           fontWeight={600}
           fontSize="18px"
@@ -60,7 +60,7 @@ export default function ContactUs() {
           <Box component="span" fontWeight={500}>
             Abcd
           </Box>
-        </Typography>
+        </Typography> */}
 
         <Stack
           direction={"row"}
@@ -68,7 +68,7 @@ export default function ContactUs() {
           justifyContent="center"
           alignItems="center"
           divider={<Divider orientation="vertical" flexItem />}
-          sx={{ mb: 4 }}
+          sx={{ mb: 4, mt: 4 }}
         >
           <Stack alignItems="center" spacing={1}>
             <PhoneIcon sx={{ color: "#2563eb" }} />
@@ -88,7 +88,7 @@ export default function ContactUs() {
               color="text.secondary"
               sx={{ fontSize: { xs: 12, md: 20 } }}
             >
-              event@vismayrun.com
+              rctripunithuraroyale24@gmail.com
             </Typography>
           </Stack>
         </Stack>

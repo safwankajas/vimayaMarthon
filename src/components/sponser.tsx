@@ -3,16 +3,16 @@ import Image from "next/image"; // Use this if you're in Next.js, else use <img>
 
 const sponsors = [
   {
-    label: "Title Sponsor -vimay ",
-    img: "/shirt.png", // Replace with uploaded image path
+    label: "Title Sponsor ",
+    img: "/VISMAY RUN LOGO 1 with back.png", // Replace with uploaded image path
   },
   {
     label: "Presented By ",
-    img: "/rotat emplo.png", // Replace with uploaded image path
+    img: "/rotat emp.png", // Replace with uploaded image path
   },
   {
-    label: "Powered By",
-    img: "/shirt.png", // Your uploaded image path
+    label: "Banking partner",
+    img: "/sbi.png", // Your uploaded image path
   },
 ];
 
@@ -42,7 +42,7 @@ export default function SponsorsSection() {
                 {sponsor.label}
               </Typography>
               {/* Use next/image for optimized image loading if Next.js */}
-              <Box sx={{ width: 100, height: 100, position: "relative" }}>
+              <Box sx={{ width: 120, height: 120, position: "relative" }}>
                 <Image
                   src={sponsor.img}
                   alt={sponsor.label}
