@@ -6,25 +6,33 @@ import {
   Toolbar,
   IconButton,
   Box,
+  Typography,
   Button,
   Drawer,
-  List,
-  ListItem,
-  ListItemText,
   MenuList,
   MenuItem,
+  ListItemText,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import Image from "next/image";
 
-const navItems = ["Home", "About", "Register", "Contact"];
+const navItems = [
+  "Home",
+  "About",
+  "Gallery",
+  "Group Registration",
+  "FAQ",
+  "Sponsors",
+  "Contact",
+];
 
 export const Header = () => {
+  const [showCTA, setShowCTA] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [showCTA, setShowCTA] = useState(false);
 
+  // Toggle mobile drawer
   const handleDrawerToggle = () => {
     setMobileOpen((prev) => !prev);
   };
@@ -45,8 +53,9 @@ export const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const bgColor = !scrolled ? "rgba(0, 0, 0, 0.05)" : "#620b38";
-  const textColor = scrolled ? "#fff" : "#620b38";
+  // Colors based on scroll
+  const bgColor = scrolled ? "#620b38" : "rgba(0, 0, 0, 0.05)";
+  const textColor = scrolled ? "#fff" : "#000";
 
   return (
     <>
@@ -55,119 +64,175 @@ export const Header = () => {
         elevation={scrolled ? 4 : 0}
         sx={{
           backgroundColor: bgColor,
-          transition: "background-color 0.3s ease, box-shadow 0.3s ease",
           color: textColor,
+          transition: "background-color 0.3s ease, color 0.3s ease",
         }}
       >
         <Toolbar
           sx={{
-            maxWidth: "1280px",
+            maxWidth: 1280,
             width: "100%",
             margin: "0 auto",
             flexWrap: "wrap",
             justifyContent: "space-between",
+            alignItems: "center",
+            padding: { xs: 1, md: 0 },
           }}
         >
-          {/* Logo Section */}
+          {/* Mobile logos row */}
           <Box
             sx={{
-              display: "flex",
-              justifyContent: { xs: "space-around", lg: "flex-start" },
-              alignItems: "center",
+              display: { xs: "flex", lg: "none" },
+              justifyContent: "space-around",
+              width: "100%",
               gap: 2,
-              flex: "1 1 100%",
-              mb: { xs: 1, lg: 0 },
+              mb: 1,
             }}
           >
-            <Image
-              src={"/VISMAY RUN LOGO 1.png"}
-              alt="Logo 1"
-              width={80}
-              height={80}
-              style={{ objectFit: "contain" }}
-              priority
-            />
-            <Image
-              src={"/rotat emp.png"}
-              alt="Logo 2"
-              width={80}
-              height={80}
-              style={{ objectFit: "contain" }}
-              priority
-            />
-            <Image
-              src={"/vismay log 2.png"}
-              alt="Logo 3"
-              width={80}
-              height={80}
-              style={{ objectFit: "contain" }}
-              priority
-            />
+            {["VISMAY RUN LOGO 1.png", "rotat emp.png", "vismay log 2.png"].map(
+              (src, i) => (
+                <Image
+                  key={i}
+                  src={`/${src}`}
+                  alt={`Logo ${i + 1}`}
+                  width={100}
+                  height={100}
+                  style={{ objectFit: "contain" }}
+                  priority
+                />
+              )
+            )}
           </Box>
 
-          {/* Menu + Register Button */}
+          {/* Mobile: Register button + menu icon */}
           <Box
             sx={{
-              display: "flex",
-              justifyContent: { xs: "center", lg: "flex-end" },
+              display: { xs: "flex", lg: "none" },
+              justifyContent: "space-between",
               alignItems: "center",
-              gap: 2,
-              flex: "1 1 100%",
-              flexWrap: "wrap",
-              mb: { xs: 1, lg: 0 },
+              width: "100%",
+              mb: 1,
             }}
           >
-            {/* Desktop nav */}
-            <Box sx={{ display: { xs: "none", lg: "flex" }, gap: 4 }}>
-              {navItems.map((item) => (
-                <Button
-                  href={`#${item.toLowerCase()}`}
-                  key={item}
-                  sx={{
-                    color: textColor,
-                    fontWeight: 500,
-                    textTransform: "none",
-                  }}
-                  disableRipple
-                >
-                  {item}
-                </Button>
-              ))}
-            </Box>
-
-            {/* Register Button */}
             <Button
-              href="https://www.d.com"
+              href="#register"
               variant="contained"
               sx={{
-                fontSize: { xs: "10px", md: "14px" },
-                borderRadius: "8px",
-                pointerEvents: showCTA ? "auto" : "none",
                 backgroundColor: textColor,
                 color: bgColor,
+                fontWeight: 600,
+                pointerEvents: showCTA ? "auto" : "none",
                 opacity: showCTA ? 1 : 0,
-                textTransform: "none",
-                transition: "opacity 0.3s ease",
                 ...(showCTA && {
                   "&:hover": {
                     backgroundColor: textColor,
                     color: bgColor,
                   },
                 }),
+                textTransform: "none",
+                borderRadius: 2,
+                fontSize: 14,
+                px: 2,
+                "&:hover": {
+                  backgroundColor: textColor,
+                  opacity: 0.9,
+                },
               }}
             >
               Register Now
             </Button>
 
-            {/* Mobile menu toggle */}
             <IconButton
-              edge="start"
-              aria-label="menu"
               onClick={handleDrawerToggle}
-              sx={{ display: { lg: "none" }, color: textColor }}
+              sx={{ color: textColor }}
+              aria-label="menu"
             >
               {mobileOpen ? <CloseIcon /> : <MenuIcon />}
             </IconButton>
+          </Box>
+
+          {/* Desktop header */}
+          <Box
+            sx={{
+              display: { xs: "none", lg: "flex" },
+              width: "100%",
+              alignItems: "center",
+              justifyContent: "space-between",
+            }}
+          >
+            {/* Logos and date */}
+            <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
+              {[
+                "VISMAY RUN LOGO 1.png",
+                "rotat emp.png",
+                "vismay log 2.png",
+              ].map((src, i) => (
+                <Image
+                  key={i}
+                  src={`/${src}`}
+                  alt={`Logo ${i + 1}`}
+                  width={70}
+                  height={70}
+                  style={{ objectFit: "contain" }}
+                  priority
+                />
+              ))}
+
+              <Box sx={{ ml: 1 }}>
+                <Typography variant="subtitle2" fontWeight="bold">
+                  05th October 2025
+                </Typography>
+                <Typography variant="body2">Kochi</Typography>
+              </Box>
+            </Box>
+
+            {/* Navigation */}
+            <Box sx={{ display: "flex", gap: 3 }}>
+              {navItems.map((item) => (
+                <Button
+                  key={item}
+                  href={`#${item.toLowerCase().replace(/\s+/g, "-")}`}
+                  sx={{
+                    color: textColor,
+                    fontWeight: 500,
+                    textTransform: "none",
+                    borderBottom:
+                      item === "Home"
+                        ? "2px solid #fff"
+                        : "2px solid transparent",
+                    borderRadius: 0,
+                  }}
+                >
+                  {item}
+                </Button>
+              ))}
+            </Box>
+
+            {/* Register CTA */}
+
+            <Button
+              href="#register"
+              variant="contained"
+              sx={{
+                backgroundColor: textColor,
+                color: bgColor,
+                pointerEvents: showCTA ? "auto" : "none",
+                opacity: showCTA ? 1 : 0,
+                ...(showCTA && {
+                  "&:hover": {
+                    backgroundColor: textColor,
+                    color: bgColor,
+                  },
+                }),
+                fontWeight: 600,
+                textTransform: "none",
+                px: 3,
+                borderRadius: 1,
+                "&:hover": { backgroundColor: "#115293" },
+              }}
+            >
+              Register Now
+            </Button>
           </Box>
         </Toolbar>
       </AppBar>
@@ -181,30 +246,30 @@ export const Header = () => {
       >
         <Box sx={{ p: 2 }}>
           <MenuList>
-            {navItems.map((text) => (
-              <a href={`#${text.toLowerCase()}`} key={text}>
-                <MenuItem
-                  onClick={handleDrawerToggle}
-                  sx={{
-                    "&:hover": {
-                      backgroundColor: "rgba(0, 0, 0, 0.05)",
-                      color: "#620b38",
-                    },
-                  }}
-                  component="li"
-                >
-                  <ListItemText
-                    primary={text}
-                    primaryTypographyProps={{ fontWeight: 500 }}
-                  />
-                </MenuItem>
-              </a>
+            {navItems.map((item) => (
+              <MenuItem
+                key={item}
+                component="a"
+                href={`#${item.toLowerCase().replace(/\s+/g, "-")}`}
+                onClick={handleDrawerToggle}
+                sx={{
+                  "&:hover": {
+                    backgroundColor: "rgba(0, 0, 0, 0.05)",
+                    color: "#620b38",
+                  },
+                }}
+              >
+                <ListItemText
+                  primary={item}
+                  primaryTypographyProps={{ fontWeight: 500 }}
+                />
+              </MenuItem>
             ))}
           </MenuList>
         </Box>
       </Drawer>
 
-      {/* Spacer for sticky AppBar */}
+      {/* Toolbar spacer for sticky header */}
       {/* <Toolbar /> */}
     </>
   );
