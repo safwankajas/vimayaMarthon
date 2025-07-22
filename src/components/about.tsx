@@ -135,7 +135,7 @@ export const AboutSection = () => {
         >
           {["/vismayphoto1.jpg", "/vismayphoto2.jpg"].map((src, i) => (
             <SwiperSlide key={i}>
-              <Card sx={{ height: { xs: 250, md: 450 }, borderRadius: "15px" }}>
+              <Card sx={{ height: { xs: 190, md: 450 }, borderRadius: "15px" }}>
                 <Image
                   src={src}
                   alt={`Slide ${i + 1}`}
