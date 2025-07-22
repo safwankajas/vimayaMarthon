@@ -2,196 +2,226 @@ import React from "react";
 import {
   Box,
   Typography,
-  Table,
-  TableBody,
-  TableCell,
-  TableContainer,
-  TableHead,
-  TableRow,
-  Paper,
-  useMediaQuery,
-  useTheme,
+  Card,
+  CardContent,
   Button,
+  Grid,
 } from "@mui/material";
-import HowToRegisterStepper from "./stepper";
-import HorizontalStepper from "./stepper";
 
 const Register = () => {
-  const headerCells = ["Distance", "Gender", "Date", "Start Time", "Medals"];
-  const rowData = ["5 KM", "Female", "5 Oct 2025", "6:00 AM", "Included"];
-
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const raceData = {
+    title: "5K Run",
+    distance: "5km",
+    minAge: 18,
+    price: {
+      earlyBird: 399,
+      regular: 400,
+      earlyBirdDate: "Until Sep 30",
+      afterDate: "After Sep 30",
+    },
+    includes: [
+      { imgSrc: "/shirt.png", label: "Branded T-Shirt" },
+      { imgSrc: "/medal.png", label: "Finisher Medal" },
+      { imgSrc: "/bib.png", label: "Bib Number" },
+      { imgSrc: "/water.png", label: "Refreshments & Hydration" },
+      { imgSrc: "/gift.png", label: "Other goodies in run kit" },
+      { imgSrc: "/cert.png", label: "E-Certificate" },
+      { imgSrc: "/med.png", label: "Medical & Emergency Support" },
+      { imgSrc: "/offer.png", label: "Attractive Offer coupons" },
+    ],
+    imageSrc: "/05-category.jpg", // Image path for 5K
+    registerLink: "/05-category", // Replace with the actual registration link
+  };
 
   return (
     <Box sx={{ px: 2, py: 4 }}>
+      {/* Heading Section */}
       <Box
         sx={{
-          p: 2,
-          display: "flex",
-          flexDirection: "column",
-          borderRadius: 4,
-          border: "1px dashed #7B1E3A",
-          backdropFilter: "blur(10px)",
-          backgroundColor: "rgba(0,0,0,0.06)",
-          // border: "1px solid rgba(255, 255, 255, 0.2)",
+          // backgroundColor: "#87CEEB", // Light blue background color
+          padding: "16px 0",
+          textAlign: "center",
+          marginBottom: "16px",
         }}
       >
-        <Typography
-          variant="h6"
-          fontWeight="bold"
-          sx={{ mb: 3, color: "#3b0a0a", textAlign: "center" }}
-        >
-          RACE CATEGORIES
+        <Typography variant="h4" fontWeight="bold" sx={{ color: "#000" }}>
+          Race Categories
         </Typography>
-        <Box
-          sx={{
-            // display: "flex",
-            justifyContent: "center",
-            borderRadius: 4,
-          }}
-        >
-          <TableContainer
-            component={Paper}
-            sx={{
-              borderRadius: 2,
-              boxShadow: "none",
-              backgroundColor: "#fcefdc",
-              border: "2px solid #7B1E3A",
-              width: "100%",
-            }}
-          >
-            {!isMobile ? (
-              // Desktop Table
-              <Table>
-                <TableHead>
-                  <TableRow sx={{ backgroundColor: "#7B1E3A" }}>
-                    {headerCells.map((header, idx) => (
-                      <TableCell
-                        key={idx}
-                        sx={{
-                          color: "#fff",
-                          fontWeight: "bold",
-                          textAlign: "center",
-                          borderRight:
-                            idx !== headerCells.length - 1
-                              ? "1px solid #fcefdc"
-                              : "none",
-                        }}
-                      >
-                        {header}
-                      </TableCell>
-                    ))}
-                  </TableRow>
-                </TableHead>
+      </Box>
 
-                <TableBody>
-                  <TableRow>
-                    {rowData.map((cell, idx) => (
-                      <TableCell
-                        key={idx}
-                        align="center"
-                        sx={{
-                          borderRight:
-                            idx !== rowData.length - 1
-                              ? "1px solid #7B1E3A"
-                              : "none",
-                          borderTop: "1px solid #7B1E3A",
-                        }}
-                      >
-                        {cell}
-                      </TableCell>
-                    ))}
-                  </TableRow>
-                </TableBody>
-              </Table>
-            ) : (
-              // Mobile Vertical View
-              <Box>
-                {headerCells.map((label, idx) => (
+      {/* Race Cards */}
+      <Grid container spacing={3} justifyContent="center">
+        <Box>
+          <Card sx={{ borderRadius: 2, overflow: "hidden", boxShadow: 3 }}>
+            {/* Image & Timed Badge */}
+            <Box sx={{ position: "relative" }}>
+              <img
+                src={raceData.imageSrc}
+                alt={raceData.title}
+                className="w-full object-cover aspect-video"
+                style={{ width: "100%", height: "200px", objectFit: "cover" }}
+              />
+              <Box
+                sx={{
+                  position: "absolute",
+                  top: "16px",
+                  left: "16px",
+                  backgroundColor: "#F44336",
+                  borderRadius: "50%",
+                  padding: "8px",
+                }}
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="lucide lucide-clock text-white"
+                  style={{ width: "20px", height: "20px" }}
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <polyline points="12 6 12 12 16 14" />
+                </svg>
+              </Box>
+              <Box
+                sx={{
+                  position: "absolute",
+                  top: "16px",
+                  right: "16px",
+                  backgroundColor: "#fff",
+                  borderRadius: "50px",
+                  padding: "4px 12px",
+                  fontSize: "12px",
+                  fontWeight: "bold",
+                  color: "#333",
+                }}
+              >
+                Timed
+              </Box>
+            </Box>
+
+            {/* Card Content */}
+            <CardContent sx={{ padding: "16px" }}>
+              <Typography variant="h6" fontWeight="bold" sx={{ mb: 1 }}>
+                {raceData.title}
+              </Typography>
+              <Typography
+                variant="body1"
+                sx={{ color: "#1976D2", fontWeight: "bold" }}
+              >
+                {raceData.distance}
+              </Typography>
+              <Typography variant="body2" sx={{ color: "#757575" }}>
+                Age limit: {raceData.minAge} Years & above
+              </Typography>
+
+              {/* What's Included */}
+              <Typography variant="subtitle2" fontWeight="bold" sx={{ mt: 2 }}>
+                What&apos;s Included:
+              </Typography>
+              <Box
+                sx={{
+                  mt: 1,
+                  display: "grid",
+                  gridTemplateColumns: "1fr 1fr",
+                  gap: 1,
+                }}
+              >
+                {raceData.includes.map((item, index) => (
                   <Box
-                    key={idx}
-                    sx={{
-                      display: "flex",
-                      borderBottom: "1px solid #7B1E3A",
-                      borderTop: idx === 0 ? "1px solid #7B1E3A" : "none",
-                    }}
+                    key={index}
+                    sx={{ display: "flex", alignItems: "center" }}
                   >
-                    <Box
-                      sx={{
-                        width: "120px",
-                        backgroundColor: "#7B1E3A",
-                        color: "#fff",
-                        fontWeight: "bold",
-                        px: 2,
-                        py: 1,
-                        // m: 1,
-                        borderRight: "1px solid black",
-                        borderBottom:
-                          idx !== headerCells.length - 1
-                            ? "1px solid black"
-                            : "none",
-                      }}
-                    >
-                      {label}
+                    <Box sx={{ mr: 1 }}>
+                      <img
+                        src={item.imgSrc}
+                        alt={item.label}
+                        style={{
+                          width: "20px", // Adjust the size of the icon as needed
+                          height: "20px",
+                        }}
+                      />
                     </Box>
-                    <Box sx={{ width: "60%", px: 2, py: 1 }}>
-                      {rowData[idx]}
-                    </Box>
+                    <Typography variant="body2" sx={{ fontSize: "14px" }}>
+                      {item.label}
+                    </Typography>
                   </Box>
                 ))}
               </Box>
-            )}
-          </TableContainer>
+
+              {/* Pricing */}
+              <Box
+                sx={{
+                  backgroundColor: "#F5F5F5",
+                  borderRadius: "8px",
+                  padding: "16px",
+                  mt: 2,
+                  display: "grid",
+                  gridTemplateColumns: "1fr 1fr",
+                  gap: 3,
+                  textAlign: "center",
+                }}
+              >
+                <Box>
+                  <Typography variant="body2" sx={{ color: "#333" }}>
+                    <strong>Early Bird</strong>
+                  </Typography>
+                  <Typography
+                    variant="body1"
+                    sx={{ fontWeight: "bold", color: "#1976D2" }}
+                  >
+                    ₹{raceData.price.earlyBird}
+                  </Typography>
+                  <Typography variant="body2" sx={{ fontSize: "12px" }}>
+                    {raceData.price.earlyBirdDate}
+                  </Typography>
+                </Box>
+                <Box>
+                  <Typography variant="body2" sx={{ color: "#333" }}>
+                    <strong>Regular</strong>
+                  </Typography>
+                  <Typography
+                    variant="body1"
+                    sx={{
+                      fontWeight: "bold",
+                      color: "#757575",
+                      textDecoration: "line-through",
+                    }}
+                  >
+                    ₹{raceData.price.regular}
+                  </Typography>
+                  <Typography variant="body2" sx={{ fontSize: "12px" }}>
+                    {raceData.price.afterDate}
+                  </Typography>
+                </Box>
+              </Box>
+
+              {/* Register Button */}
+              <Box sx={{ mt: 3 }}>
+                <Button
+                  variant="contained"
+                  fullWidth
+                  sx={{
+                    backgroundColor: "#1976D2",
+                    color: "#fff",
+                    "&:hover": { backgroundColor: "#1565C0" },
+                  }}
+                  href={raceData.registerLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Register Now
+                </Button>
+              </Box>
+            </CardContent>
+          </Card>
         </Box>
-        <HorizontalStepper />
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "space-around",
-          }}
-        >
-          <Paper
-            square
-            elevation={0}
-            sx={{
-              width: "200px",
-              p: 1,
-              mt: 1,
-              backgroundColor: "#fcefdc",
-              borderRadius: "3px",
-              border: "1px dashed #7B1E3A",
-              textAlign: "center",
-            }}
-          >
-            <Typography variant="subtitle1" sx={{ color: "#7B1E3A" }}>
-              Registration Fee:
-            </Typography>
-            <Typography
-              variant="subtitle1"
-              sx={{ fontWeight: "bold", color: "#7B1E3A" }}
-            >
-              ₹399 for 5 KM
-            </Typography>
-            <Button
-              variant="outlined"
-              sx={{
-                mt: 1,
-                borderColor: "#7B1E3A",
-                color: "#fcefdc",
-                backgroundColor: "#7B1E3A",
-                "&:hover": {
-                  borderColor: "#5e142c",
-                  color: "#7B1E3A",
-                  backgroundColor: "#fcefdc",
-                },
-              }}
-            >
-              Register Now
-            </Button>
-          </Paper>
-        </Box>
-      </Box>
+      </Grid>
     </Box>
   );
 };
