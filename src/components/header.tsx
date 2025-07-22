@@ -17,15 +17,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import Image from "next/image";
 
-const navItems = [
-  "Home",
-  "About",
-  "Gallery",
-  "Group Registration",
-  "FAQ",
-  "Sponsors",
-  "Contact",
-];
+const navItems = ["Home", "About", "FAQ", "Sponsors", "Contact"];
 
 export const Header = () => {
   const [showCTA, setShowCTA] = useState(false);

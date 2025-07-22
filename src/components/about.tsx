@@ -26,7 +26,7 @@ export const AboutSection = () => {
       sx={{
         display: "flex",
         flexDirection: { xs: "column", md: "row" },
-        backgroundColor: "#7B1E3A",
+        backgroundColor: "#620b38",
         color: "#fff",
         px: { xs: 2, md: 8 },
         py: { xs: 4, md: 6 },
@@ -47,7 +47,7 @@ export const AboutSection = () => {
           <Typography variant="h5" fontWeight="bold" mb={1}>
             About the Event
           </Typography>
-          <Typography variant="body1">
+          <Typography variant="body1" sx={{ textAlign: "justify" }}>
             Vismay Run 2025 isn’t just a marathon—it’s a movement. It’s about
             unity, strength, and creating a platform where every woman, no
             matter her age or background, can run for health, confidence, and a
@@ -94,10 +94,10 @@ export const AboutSection = () => {
               Organized by
             </Typography>
             <Image
-              src="/rotat emp.png"
+              src="/royalclub.png"
               alt="Rotary Club of Tripunithura Royale"
-              width={150}
-              height={150}
+              width={100}
+              height={100}
               style={{ objectFit: "contain" }}
             />
 
@@ -229,7 +229,7 @@ export const AboutSection = () => {
             Organized by
           </Typography>
           <Image
-            src="/rotat emp.png"
+            src="/royalclub.png"
             alt="Rotary Club of Tripunithura Royale"
             width={150}
             height={150}

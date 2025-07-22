@@ -11,6 +11,7 @@ import MedalTShirtPreview from "@/components/shirtMedal";
 import ContactUs from "@/components/contact";
 import FAQSection from "@/components/faq";
 import Footer from "@/components/footer";
+import { RegistrationStatusCard } from "@/components/groupRegister";
 
 export default function Home() {
   return (
@@ -25,6 +26,9 @@ export default function Home() {
         }}
       >
         <HomePage />
+      </Box>
+      <Box sx={{ my: { xs: 0, md: 0 } }}>
+        <RegistrationStatusCard />
       </Box>
       <Box id="about">
         <AboutSection />

@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import { Box, Typography, Button, Container } from "@mui/material";
+import { RegistrationStatusCard } from "./groupRegister";
 
 export const HomePage = () => {
   const [offsetY, setOffsetY] = useState(0);
@@ -65,60 +66,6 @@ export const HomePage = () => {
             Endure. Excel.
           </Typography>
         </Container>
-
-        <Box
-          sx={{
-            backgroundColor: { xs: "rgba(0,0,0,0.4)", md: "rgba(0,0,0,0.25)" },
-            backdropFilter: "blur(10px)",
-            WebkitBackdropFilter: "blur(10px)",
-            color: "#fff",
-            mx: { xs: 0, md: 4 },
-            p: 4,
-            borderRadius: 3,
-            width: { xs: "100%", md: "95%" },
-            // mx: "auto",
-            mt: { xs: "-50%", md: "-5%" },
-            transform: `translateY(${dynamicTranslate}px)`,
-            transition: "transform 0.1s ease-out",
-            position: "relative",
-            zIndex: 3,
-          }}
-        >
-          <Typography variant="body2" mt={2}>
-            October 5, 2025 | Durbar Hall Ground, Ernakulam
-          </Typography>
-          <Typography variant="body2" mt={0.5}>
-            Reporting: 5:30 AM | Flag-off: 6:30 AM
-          </Typography>
-          <Button
-            variant="contained"
-            size="large"
-            href="#register"
-            sx={{
-              my: 1,
-              backgroundColor: "#7B1E3A",
-              textTransform: "none",
-              fontWeight: "bold",
-              "&:hover": {
-                backgroundColor: "#5a152b",
-              },
-            }}
-          >
-            Register Now
-          </Button>
-          <Typography variant="h5" fontWeight="bold" mb={1}>
-            Overview
-          </Typography>
-
-          <Typography ref={stopRef} variant="body1">
-            All Women Marathon is a celebration of womanhood, endurance, and
-            community strength. Organized by the Rotary Club of Tripunithura
-            Royale, this landmark event is designed to empower women through
-            fitness, wellness, and purpose. Join thousands of women from all
-            walks of life as they run together for a cause that will help to
-            provide insulin pumps for children suffering from Type-1 Diabetes.
-          </Typography>
-        </Box>
       </Box>
     </>
   );
