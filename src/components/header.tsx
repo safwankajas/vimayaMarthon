@@ -195,7 +195,7 @@ export const Header = () => {
       </Drawer>
 
       {/* Spacer for sticky AppBar */}
-      <Toolbar />
+      {/* <Toolbar /> */}
     </>
   );
 };
