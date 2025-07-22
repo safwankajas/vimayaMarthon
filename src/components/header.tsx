@@ -65,14 +65,11 @@ export const Header = () => {
         <Toolbar sx={{ maxWidth: "1280px", width: "100%", margin: "0 auto" }}>
           <Box sx={{ flexGrow: 1, display: "flex" }}>
             <Image
-              src={
-                !scrolled
-                  ? "/VISMAY RUN LOGO 1 with back.png"
-                  : "/VISMAY RUN LOGO 1.png"
-              }
+              src={"/VISMAY RUN LOGO 1.png"}
               alt="Logo"
               width={100}
               height={100}
+              color="red"
               layout="intrinsic"
               objectFit="contain"
             />
