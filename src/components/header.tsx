@@ -69,25 +69,24 @@ export const Header = () => {
               alt="Logo"
               width={100}
               height={100}
-              color="red"
-              layout="intrinsic"
-              objectFit="contain"
+              style={{ objectFit: "contain" }}
+              priority
             />
             <Image
               src={"/rotat emp.png"}
               alt="Logo"
               width={100}
               height={100}
-              layout="intrinsic"
-              objectFit="contain"
+              style={{ objectFit: "contain" }}
+              priority
             />
             <Image
               src={"/vismay log 2.png"}
               alt="Logo"
               width={100}
               height={100}
-              layout="intrinsic"
-              objectFit="contain"
+              style={{ objectFit: "contain" }}
+              priority
             />
             {/* <Typography
               fontWeight={600}
