@@ -46,16 +46,16 @@ export const Header = () => {
     handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-  const bgColor = !scrolled ? "rgba(0, 0, 0, 0.05)" : "#7B1E3A";
-  const textColor = scrolled ? "#fff" : "#7B1E3A";
-  const ctcBgColor = showCTA ? "rgba(0, 0, 0, 0.05)" : "#7B1E3A";
-  const ctcTextColor = !scrolled ? "#fff" : "#7B1E3A";
+  const bgColor = !scrolled ? "rgba(0, 0, 0, 0.05)" : "#620b38";
+  const textColor = scrolled ? "#fff" : "#620b38";
+  const ctcBgColor = showCTA ? "rgba(0, 0, 0, 0.05)" : "#620b38";
+  const ctcTextColor = !scrolled ? "#fff" : "#620b38";
 
   return (
     <>
       <AppBar
         position="fixed"
-        elevation={scrolled ? 4 : 0}
+        // elevation={scrolled ? 4 : 0}
         sx={{
           backgroundColor: bgColor,
           transition: "background-color 0.3s ease, box-shadow 0.3s ease",
@@ -64,8 +64,23 @@ export const Header = () => {
       >
         <Toolbar sx={{ maxWidth: "1280px", width: "100%", margin: "0 auto" }}>
           <Box sx={{ flexGrow: 1, display: "flex" }}>
-            <Image src="/vismaylogo.png" alt="Logo" width={40} height={40} />
-            <Typography
+            <Image
+              src={
+                !scrolled
+                  ? "/VISMAY RUN LOGO 1 with back.png"
+                  : "/VISMAY RUN LOGO 1.png"
+              }
+              alt="Logo"
+              width={100}
+              height={100}
+            />
+            <Image
+              src={!scrolled ? "/rotat emp bck.png" : "/rotat emp.png"}
+              alt="Logo"
+              width={100}
+              height={100}
+            />
+            {/* <Typography
               fontWeight={600}
               sx={{
                 ml: 1,
@@ -78,7 +93,7 @@ export const Header = () => {
               }}
             >
               vismayrun2025
-            </Typography>
+            </Typography> */}
           </Box>
 
           {/* Desktop nav */}
@@ -102,8 +117,9 @@ export const Header = () => {
             href="www.d.com"
             variant="contained"
             sx={{
-              mx: 2,
-              gap: 4,
+              mx: 1,
+              gap: 1,
+              fontSize: { xs: "10px", md: "14px" },
               borderRadius: "8px",
               pointerEvents: showCTA ? "auto" : "none",
               backgroundColor: textColor,
@@ -149,7 +165,7 @@ export const Header = () => {
                     sx={{
                       "&:hover": {
                         backgroundColor: "rgba(0, 0, 0, 0.05)",
-                        color: "#7B1E3A",
+                        color: "#620b38",
                       },
                     }}
                     onClick={handleDrawerToggle}
