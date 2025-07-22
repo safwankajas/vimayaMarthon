@@ -15,7 +15,7 @@ const Register = () => {
     minAge: 18,
     price: {
       earlyBird: 399,
-      regular: 400,
+      regular: 499,
       earlyBirdDate: "Until Sep 30",
       afterDate: "After Sep 30",
     },
@@ -112,7 +112,7 @@ const Register = () => {
               </Typography>
               <Typography
                 variant="body1"
-                sx={{ color: "#1976D2", fontWeight: "bold" }}
+                sx={{ color: "#620b38", fontWeight: "bold" }}
               >
                 {raceData.distance}
               </Typography>
@@ -142,12 +142,12 @@ const Register = () => {
                         src={item.imgSrc}
                         alt={item.label}
                         style={{
-                          width: "20px", // Adjust the size of the icon as needed
-                          height: "20px",
+                          width: "15px", // Adjust the size of the icon as needed
+                          height: "15px",
                         }}
                       />
                     </Box>
-                    <Typography variant="body2" sx={{ fontSize: "14px" }}>
+                    <Typography variant="body2" sx={{ fontSize: "12px" }}>
                       {item.label}
                     </Typography>
                   </Box>
@@ -173,7 +173,7 @@ const Register = () => {
                   </Typography>
                   <Typography
                     variant="body1"
-                    sx={{ fontWeight: "bold", color: "#1976D2" }}
+                    sx={{ fontWeight: "bold", color: "#620b38" }}
                   >
                     ₹{raceData.price.earlyBird}
                   </Typography>
@@ -186,9 +186,8 @@ const Register = () => {
                     <strong>Regular</strong>
                   </Typography>
                   <Typography
-                    variant="body1"
+                    variant="subtitle1"
                     sx={{
-                      fontWeight: "bold",
                       color: "#757575",
                       textDecoration: "line-through",
                     }}
@@ -207,9 +206,8 @@ const Register = () => {
                   variant="contained"
                   fullWidth
                   sx={{
-                    backgroundColor: "#1976D2",
+                    backgroundColor: "#620b38",
                     color: "#fff",
-                    "&:hover": { backgroundColor: "#1565C0" },
                   }}
                   href={raceData.registerLink}
                   target="_blank"

@@ -33,12 +33,12 @@ export default function Home() {
       <Box id="about">
         <AboutSection />
       </Box>
-      <Box id="register" sx={{ backgroundColor: "#fcefdc" }}>
+      <Box id="register" sx={{}}>
         <Register />
       </Box>
-      <Box sx={{}}>
+      {/* <Box sx={{}}>
         <InclusionsSection />
-      </Box>
+      </Box> */}
       <Box>
         <EventLocation />
       </Box>
