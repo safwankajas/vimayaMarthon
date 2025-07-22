@@ -55,7 +55,7 @@ export const Header = () => {
     <>
       <AppBar
         position="fixed"
-        // elevation={scrolled ? 4 : 0}
+        elevation={scrolled ? 4 : 0}
         sx={{
           backgroundColor: bgColor,
           transition: "background-color 0.3s ease, box-shadow 0.3s ease",
