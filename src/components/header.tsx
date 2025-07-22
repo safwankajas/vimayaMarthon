@@ -76,14 +76,22 @@ export const Header = () => {
               layout="intrinsic"
               objectFit="contain"
             />
-            {/* <Image
-              src={!scrolled ? "/rotat emp bck.png" : "/rotat emp.png"}
+            <Image
+              src={"/rotat emp.png"}
               alt="Logo"
               width={100}
               height={100}
               layout="intrinsic"
               objectFit="contain"
-            /> */}
+            />
+            <Image
+              src={"/vismay log 2.png"}
+              alt="Logo"
+              width={100}
+              height={100}
+              layout="intrinsic"
+              objectFit="contain"
+            />
             {/* <Typography
               fontWeight={600}
               sx={{
