@@ -49,7 +49,12 @@ export const AboutSection = () => {
       >
         {/* Top Half */}
         <Box sx={{ flex: 1 }}>
-          <Typography variant="h5" fontWeight="bold" mb={1}>
+          <Typography
+            variant="zenHeadingh1"
+            fontSize={"2rem"}
+            fontWeight="bold"
+            mb={1}
+          >
             About the Event
           </Typography>
           <Typography
@@ -99,7 +104,12 @@ export const AboutSection = () => {
               // border: "1px solid rgba(255, 255, 255, 0.2)",
             }}
           >
-            <Typography variant="h5" fontWeight="bold" mb={1}>
+            <Typography
+              variant="zenHeadingh1"
+              fontSize={"2rem"}
+              fontWeight="bold"
+              mb={1}
+            >
               Organized by
             </Typography>
             <Image
@@ -227,7 +237,12 @@ export const AboutSection = () => {
             border: "1px solid rgba(255, 255, 255, 0.2)",
           }}
         >
-          <Typography variant="h5" fontWeight="bold" mb={1}>
+          <Typography
+            variant="zenHeadingh1"
+            fontSize={"2rem"}
+            fontWeight="bold"
+            mb={1}
+          >
             Organized by
           </Typography>
           <Image

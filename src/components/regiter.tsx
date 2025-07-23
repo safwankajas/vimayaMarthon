@@ -44,7 +44,12 @@ const Register = () => {
           marginBottom: "16px",
         }}
       >
-        <Typography variant="h4" fontWeight="bold" sx={{ color: "#000" }}>
+        <Typography
+          variant="zenHeadingh1"
+          fontSize={"2rem"}
+          fontWeight="bold"
+          sx={{ color: "#000" }}
+        >
           Race Categories
         </Typography>
       </Box>

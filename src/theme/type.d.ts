@@ -7,12 +7,12 @@ declare module "@mui/material/styles" {
   }
 
   interface TypographyVariantsOptions {
-    zenHeading?: React.CSSProperties;
+    zenHeadingh1?: React.CSSProperties;
   }
 }
 
 declare module "@mui/material/Typography" {
   interface TypographyPropsVariantOverrides {
-    zenHeading: true;
+    zenHeadingh1: true;
   }
 }

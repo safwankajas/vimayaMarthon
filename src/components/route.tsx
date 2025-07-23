@@ -41,7 +41,8 @@ export default function EventLocation() {
           }}
         >
           <Typography
-            variant="h4"
+            variant="zenHeadingh1"
+            fontSize={"2rem"}
             sx={{
               fontWeight: 700,
               color: "#7B1E3A",

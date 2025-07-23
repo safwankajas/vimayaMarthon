@@ -4,10 +4,10 @@ import { createTheme } from "@mui/material/styles";
 const theme = createTheme({
   typography: {
     fontFamily: "Roboto, Arial, sans-serif", // default font
-    zenHeading: {
-      fontFamily: "'Zen Dots', sans-serif",
+    zenHeadingh1: {
+      fontFamily: "'Red Rose', sans-serif",
       fontSize: "4rem",
-      fontWeight: 900,
+      fontWeight: 700,
     },
   },
 });

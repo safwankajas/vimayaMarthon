@@ -37,7 +37,7 @@ export const RegistrationStatusCard = () => {
           sx={{ width: { xs: "100%", md: "60%" } }}
         >
           <Box>
-            <Typography fontWeight="bold" fontSize={18}>
+            <Typography variant="zenHeadingh1" fontWeight="700" fontSize={30}>
               Overview
             </Typography>
             <Typography

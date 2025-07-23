@@ -60,7 +60,11 @@ export const HomePage = () => {
             justifyContent: "center",
           }}
         >
-          <Typography variant="zenHeading" fontWeight="bold">
+          <Typography
+            variant="zenHeadingh1"
+            fontSize={"4rem"}
+            fontWeight="bold"
+          >
             Empower.
             <br />
             Endure. Excel.
