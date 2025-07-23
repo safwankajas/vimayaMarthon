@@ -115,11 +115,38 @@ export const AboutSection = () => {
         sx={{
           flex: 1,
           position: "relative",
-          aspectRatio: "16 / 9",
+          // aspectRatio: "16 / 9",
           borderRadius: 2,
           overflow: "hidden",
         }}
       >
+        <Box
+          sx={{
+            bottom: 0,
+            position: "absolute",
+            width: "100%",
+            height: 70,
+            zIndex: 4,
+            background: "#fff",
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-around",
+          }}
+        >
+          {["VISMAY LOGO.png", "rotat emp.png", "vismay log 2.png"].map(
+            (src, i) => (
+              <Image
+                key={i}
+                src={`/${src}`}
+                alt={`Logo ${i + 1}`}
+                width={100}
+                height={100}
+                style={{ objectFit: "contain" }}
+                priority
+              />
+            )
+          )}
+        </Box>
         <Swiper
           spaceBetween={20}
           centeredSlides={true}
@@ -135,7 +162,7 @@ export const AboutSection = () => {
         >
           {["/vismayphoto1.jpg", "/vismayphoto2.jpg"].map((src, i) => (
             <SwiperSlide key={i}>
-              <Card sx={{ height: { xs: 190, md: 450 }, borderRadius: "15px" }}>
+              <Card sx={{ height: { xs: 300, md: 450 }, borderRadius: "15px" }}>
                 <Image
                   src={src}
                   alt={`Slide ${i + 1}`}
@@ -153,43 +180,6 @@ export const AboutSection = () => {
           ))}
 
           {/* Progress Indicator */}
-          <Box
-            sx={{
-              position: "absolute",
-              bottom: 12,
-              right: 12,
-              width: 48,
-              height: 48,
-              borderRadius: "50%",
-              backgroundColor: "rgba(0,0,0,0.5)",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              color: "#fff",
-              zIndex: 10,
-              fontSize: 12,
-            }}
-          >
-            <svg
-              viewBox="0 0 48 48"
-              style={{ position: "absolute", top: 0, left: 0 }}
-              width={48}
-              height={48}
-            >
-              <circle
-                ref={progressCircle}
-                cx="24"
-                cy="24"
-                r="20"
-                fill="none"
-                stroke="#fff"
-                strokeWidth="4"
-                strokeDasharray="126"
-                strokeDashoffset="0"
-              />
-            </svg>
-            <span ref={progressContent} />
-          </Box>
         </Swiper>
       </Box>
 
