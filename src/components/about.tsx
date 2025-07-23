@@ -1,6 +1,6 @@
 "use client";
 import React, { useRef } from "react";
-import { Box, Card, Typography } from "@mui/material";
+import { Box, Card, Paper, Typography } from "@mui/material";
 import Image from "next/image";
 
 // Swiper
@@ -26,8 +26,8 @@ export const AboutSection = () => {
       sx={{
         display: "flex",
         flexDirection: { xs: "column", md: "row" },
-        backgroundColor: "#620b38",
-        color: "#fff",
+        backgroundColor: "#fff",
+        color: "#000",
         px: { xs: 2, md: 8 },
         py: { xs: 4, md: 6 },
         gap: 4,
@@ -37,8 +37,13 @@ export const AboutSection = () => {
       <Box
         sx={{
           flex: 1,
+          p: 2,
           display: "flex",
-          flexDirection: "column",
+          flexDirection: "row",
+          borderRadius: 4,
+          backdropFilter: "blur(10px)",
+          background: "rgba(0, 0, 0, 0.1)",
+          border: "1px solid rgba(255, 255, 255, 0.2)",
           gap: 2, // spacing between halves
         }}
       >
@@ -64,17 +69,17 @@ export const AboutSection = () => {
             p: 1,
             borderRadius: 4,
             backdropFilter: "blur(10px)",
-            background: "rgba(255, 255, 255, 0.1)",
+            background: "rgba(0, 0, 0, 0.1)",
             border: "1px solid rgba(255, 255, 255, 0.2)",
-            color: "#fff",
+            color: "#000",
             textAlign: "center",
             display: { md: "flex", xs: "none" },
             flexDirection: "column",
             alignItems: "center",
-            justifyContent: "center", // vertical center
-            width: { xs: "100%", md: "100%" },
+            justifyContent: "left", // vertical center
+            width: { xs: "50%", md: "50%" },
             gap: 2,
-            mx: "auto", // horizontal center in parent
+            // mx: "auto", // horizontal center in parent
           }}
         >
           <Box
@@ -84,10 +89,10 @@ export const AboutSection = () => {
               alignItems: "center",
               justifyContent: "center",
               p: 2,
-              borderRadius: 4,
-              backdropFilter: "blur(10px)",
-              backgroundColor: "rgba(255, 255, 255, 0.1)",
-              border: "1px solid rgba(255, 255, 255, 0.2)",
+              // borderRadius: 4,
+              // backdropFilter: "blur(10px)",
+              // backgroundColor: "rgba(255, 255, 255, 0.1)",
+              // border: "1px solid rgba(255, 255, 255, 0.2)",
             }}
           >
             <Typography variant="h5" fontWeight="bold" mb={1}>
@@ -111,7 +116,8 @@ export const AboutSection = () => {
       </Box>
 
       {/* Right Box (Swiper Gallery) */}
-      <Box
+      <Paper
+        elevation={10}
         sx={{
           flex: 1,
           position: "relative",
@@ -127,7 +133,9 @@ export const AboutSection = () => {
             width: "100%",
             height: 70,
             zIndex: 4,
-            background: "#F5F5F5",
+            backdropFilter: "blur(10px)",
+            // background: "rgba(255, 255, 255, 0.4)",
+            background: "#fff",
             display: "flex",
             flexDirection: "row",
             justifyContent: "space-around",
@@ -158,11 +166,11 @@ export const AboutSection = () => {
           navigation
           modules={[Autoplay, Pagination, Navigation]}
           onAutoplayTimeLeft={onAutoplayTimeLeft}
-          style={{ borderRadius: 12, height: "100%" }}
+          style={{ height: "100%" }}
         >
           {["/vismayphoto1.jpg", "/vismayphoto2.jpg"].map((src, i) => (
             <SwiperSlide key={i}>
-              <Card sx={{ height: { xs: 300, md: 450 }, borderRadius: "15px" }}>
+              <Card sx={{ height: { xs: 350, md: 450 } }}>
                 <Image
                   src={src}
                   alt={`Slide ${i + 1}`}
@@ -171,7 +179,7 @@ export const AboutSection = () => {
                   style={{
                     width: "100%",
                     height: "100%",
-                    borderRadius: 12,
+
                     objectFit: "cover",
                   }}
                 />
@@ -181,7 +189,7 @@ export const AboutSection = () => {
 
           {/* Progress Indicator */}
         </Swiper>
-      </Box>
+      </Paper>
 
       <Box
         sx={{
@@ -189,9 +197,9 @@ export const AboutSection = () => {
           p: 1,
           borderRadius: 4,
           backdropFilter: "blur(10px)",
-          background: "rgba(255, 255, 255, 0.1)",
+          background: "rgba(0, 0, 0, 0.1)",
           border: "1px solid rgba(255, 255, 255, 0.2)",
-          color: "#fff",
+          color: "#000",
           textAlign: "center",
           display: { xs: "flex", md: "none" },
           flexDirection: "column",
@@ -211,7 +219,7 @@ export const AboutSection = () => {
             p: 2,
             borderRadius: 4,
             backdropFilter: "blur(10px)",
-            backgroundColor: "rgba(255, 255, 255, 0.1)",
+            backgroundColor: "rgba(0, 0, 0, 0.1)",
             border: "1px solid rgba(255, 255, 255, 0.2)",
           }}
         >

@@ -34,7 +34,7 @@ const Register = () => {
   };
 
   return (
-    <Box sx={{ px: 2, py: 4 }}>
+    <Box sx={{ px: 2, py: 4, background: "#F5F5F5" }}>
       {/* Heading Section */}
       <Box
         sx={{
