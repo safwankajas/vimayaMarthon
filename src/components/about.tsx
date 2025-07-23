@@ -29,7 +29,7 @@ export const AboutSection = () => {
         backgroundColor: "#fff",
         color: "#000",
         px: { xs: 2, md: 8 },
-        py: { xs: 1, md: 1 },
+        py: { xs: 2, md: 2 },
         gap: 4,
       }}
     >
