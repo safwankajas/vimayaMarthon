@@ -31,7 +31,7 @@ const faqs = [
 
 export default function FAQSection() {
   return (
-    <Box sx={{ py: 2, backgroundColor: "#fcefdc" }}>
+    <Box sx={{ py: 2, backgroundColor: "#F5F5F5" }}>
       <Container maxWidth="lg">
         <Typography
           variant="h4"

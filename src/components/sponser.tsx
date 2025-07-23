@@ -30,7 +30,7 @@ export default function SponsorsSection() {
         Our Partners & Sponsors
       </Typography>
       <Typography variant="subtitle1" color="text.secondary" mt={1} mb={4}>
-        Thank you to our amazing partners who make this event possible
+        Endless thanks to our valued partners for their vital support.
       </Typography>
 
       {/* Organizer */}

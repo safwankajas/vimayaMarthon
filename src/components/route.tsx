@@ -22,7 +22,7 @@ export default function EventLocation() {
           alignItems: "center", // 👈 Vertical center
           justifyContent: "center", // 👈 Horizontal center
           borderRadius: 4,
-          background: "#fcefdc",
+          background: "#F5F5F5",
           border: "1px solid rgba(255, 255, 255, 0.2)",
           color: "#000",
           boxShadow: 3,

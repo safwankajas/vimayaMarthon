@@ -127,7 +127,7 @@ export const AboutSection = () => {
             width: "100%",
             height: 70,
             zIndex: 4,
-            background: "#fff",
+            background: "#F5F5F5",
             display: "flex",
             flexDirection: "row",
             justifyContent: "space-around",
