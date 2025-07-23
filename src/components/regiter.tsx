@@ -12,12 +12,12 @@ const Register = () => {
   const raceData = {
     title: "5K Run",
     distance: "5km",
-    minAge: 18,
+    minAge: 12,
     price: {
       earlyBird: 399,
       regular: 499,
-      earlyBirdDate: "Until Sep 30",
-      afterDate: "After Sep 30",
+      earlyBirdDate: "Until Aug 15",
+      afterDate: "After Aug 15",
     },
     includes: [
       { imgSrc: "/shirt.png", label: "Branded T-Shirt" },
@@ -61,33 +61,7 @@ const Register = () => {
                 className="w-full object-cover aspect-video"
                 style={{ width: "100%", height: "200px", objectFit: "cover" }}
               />
-              <Box
-                sx={{
-                  position: "absolute",
-                  top: "16px",
-                  left: "16px",
-                  backgroundColor: "#F44336",
-                  borderRadius: "50%",
-                  padding: "8px",
-                }}
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="lucide lucide-clock text-white"
-                  style={{ width: "20px", height: "20px" }}
-                >
-                  <circle cx="12" cy="12" r="10" />
-                  <polyline points="12 6 12 12 16 14" />
-                </svg>
-              </Box>
+
               <Box
                 sx={{
                   position: "absolute",
@@ -101,7 +75,7 @@ const Register = () => {
                   color: "#333",
                 }}
               >
-                Timed
+                Women
               </Box>
             </Box>
 
