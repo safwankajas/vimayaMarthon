@@ -45,13 +45,15 @@ export default function Home() {
       {/* <Box sx={{}}>
         <MedalTShirtPreview />
       </Box> */}
-      <Box sx={{}}>
+      <Box id="sponsors" sx={{}}>
         <SponsorsSection />
       </Box>
-      <Box sx={{ background: "#620b38" }} id="contact">
+      <Box id="contact" sx={{ background: "#620b38" }}>
         <ContactUs />
       </Box>
-      <FAQSection />
+      <Box id="faq">
+        <FAQSection />
+      </Box>
       <Footer />
     </>
   );
