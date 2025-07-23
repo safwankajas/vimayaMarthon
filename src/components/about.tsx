@@ -29,7 +29,7 @@ export const AboutSection = () => {
         backgroundColor: "#fff",
         color: "#000",
         px: { xs: 2, md: 8 },
-        py: { xs: 4, md: 6 },
+        py: { xs: 1, md: 1 },
         gap: 4,
       }}
     >
@@ -52,7 +52,11 @@ export const AboutSection = () => {
           <Typography variant="h5" fontWeight="bold" mb={1}>
             About the Event
           </Typography>
-          <Typography variant="body1" sx={{ textAlign: "justify" }}>
+          <Typography
+            color="text.secondary"
+            variant="body1"
+            sx={{ textAlign: "justify" }}
+          >
             Vismay Run 2025 isn’t just a marathon—it’s a movement. It’s about
             unity, strength, and creating a platform where every woman, no
             matter her age or background, can run for health, confidence, and a
@@ -106,7 +110,7 @@ export const AboutSection = () => {
               style={{ objectFit: "contain" }}
             />
 
-            <Typography variant="body1" sx={{ mt: 1 }}>
+            <Typography color="text.secondary" variant="body1" sx={{ mt: 1 }}>
               With a legacy of service and community leadership, the Rotary Club
               continues to uplift society through housing projects, health and
               empowerment initiatives.
@@ -234,7 +238,7 @@ export const AboutSection = () => {
             style={{ objectFit: "contain" }}
           />
 
-          <Typography variant="body1" sx={{ mt: 1 }}>
+          <Typography color="text.secondary" variant="body1" sx={{ mt: 1 }}>
             With a legacy of service and community leadership, the Rotary Club
             continues to uplift society through housing projects, health and
             empowerment initiatives.
