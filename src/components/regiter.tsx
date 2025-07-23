@@ -34,7 +34,7 @@ const Register = () => {
   };
 
   return (
-    <Box sx={{ px: 2, py: 4, background: "#F5F5F5" }}>
+    <Box sx={{ px: 1, py: 2, background: "#F5F5F5" }}>
       {/* Heading Section */}
       <Box
         sx={{
@@ -52,9 +52,26 @@ const Register = () => {
       {/* Race Cards */}
       <Grid container spacing={3} justifyContent="center">
         <Box>
-          <Card sx={{ borderRadius: 2, overflow: "hidden", boxShadow: 3 }}>
+          <Card
+            sx={{
+              display: { md: "flex" },
+              borderRadius: 2,
+
+              overflow: "hidden",
+              boxShadow: 3,
+            }}
+          >
             {/* Image & Timed Badge */}
-            <Box sx={{ position: "relative" }}>
+            <Box
+              sx={{
+                // my: "auto",
+                display: "block",
+                alignContent: "center",
+                justifyContent: "center",
+                position: "relative",
+                background: "#620b38",
+              }}
+            >
               <img
                 src={raceData.imageSrc}
                 alt={raceData.title}
@@ -81,115 +98,123 @@ const Register = () => {
 
             {/* Card Content */}
             <CardContent sx={{ padding: "16px" }}>
-              <Typography variant="h6" fontWeight="bold" sx={{ mb: 1 }}>
-                {raceData.title}
-              </Typography>
-              <Typography
-                variant="body1"
-                sx={{ color: "#620b38", fontWeight: "bold" }}
-              >
-                {raceData.distance}
-              </Typography>
-              <Typography variant="body2" sx={{ color: "#757575" }}>
-                Age limit: {raceData.minAge} Years & above
-              </Typography>
-
-              {/* What's Included */}
-              <Typography variant="subtitle2" fontWeight="bold" sx={{ mt: 2 }}>
-                What&apos;s Included:
-              </Typography>
-              <Box
-                sx={{
-                  mt: 1,
-                  display: "grid",
-                  gridTemplateColumns: "1fr 1fr",
-                  gap: 1,
-                }}
-              >
-                {raceData.includes.map((item, index) => (
-                  <Box
-                    key={index}
-                    sx={{ display: "flex", alignItems: "center" }}
-                  >
-                    <Box sx={{ mr: 1 }}>
-                      <img
-                        src={item.imgSrc}
-                        alt={item.label}
-                        style={{
-                          width: "15px", // Adjust the size of the icon as needed
-                          height: "15px",
-                        }}
-                      />
+              <>
+                <Typography variant="h6" fontWeight="bold" sx={{ mb: 1 }}>
+                  {raceData.title}
+                </Typography>
+                <Typography
+                  variant="body1"
+                  sx={{ color: "#620b38", fontWeight: "bold" }}
+                >
+                  {raceData.distance}
+                </Typography>
+                <Typography variant="body2" sx={{ color: "#757575" }}>
+                  Age limit: {raceData.minAge} Years & above
+                </Typography>
+              </>
+              <>
+                {/* What's Included */}
+                <Typography
+                  variant="subtitle2"
+                  fontWeight="bold"
+                  sx={{ mt: 2 }}
+                >
+                  What&apos;s Included:
+                </Typography>
+                <Box
+                  sx={{
+                    mt: 1,
+                    display: "grid",
+                    gridTemplateColumns: "1fr 1fr",
+                    gap: 1,
+                  }}
+                >
+                  {raceData.includes.map((item, index) => (
+                    <Box
+                      key={index}
+                      sx={{ display: "flex", alignItems: "center" }}
+                    >
+                      <Box sx={{ mr: 1 }}>
+                        <img
+                          src={item.imgSrc}
+                          alt={item.label}
+                          style={{
+                            width: "15px", // Adjust the size of the icon as needed
+                            height: "15px",
+                          }}
+                        />
+                      </Box>
+                      <Typography variant="body2" sx={{ fontSize: "12px" }}>
+                        {item.label}
+                      </Typography>
                     </Box>
+                  ))}
+                </Box>
+              </>
+              {/* Pricing */}
+              <>
+                <Box
+                  sx={{
+                    backgroundColor: "#F5F5F5",
+                    borderRadius: "8px",
+                    padding: "16px",
+                    mt: 2,
+                    display: "grid",
+                    gridTemplateColumns: "1fr 1fr",
+                    gap: 3,
+                    textAlign: "center",
+                  }}
+                >
+                  <Box>
+                    <Typography variant="body2" sx={{ color: "#333" }}>
+                      <strong>Early Bird</strong>
+                    </Typography>
+                    <Typography
+                      variant="body1"
+                      sx={{ fontWeight: "bold", color: "#620b38" }}
+                    >
+                      ₹{raceData.price.earlyBird}
+                    </Typography>
                     <Typography variant="body2" sx={{ fontSize: "12px" }}>
-                      {item.label}
+                      {raceData.price.earlyBirdDate}
                     </Typography>
                   </Box>
-                ))}
-              </Box>
-
-              {/* Pricing */}
-              <Box
-                sx={{
-                  backgroundColor: "#F5F5F5",
-                  borderRadius: "8px",
-                  padding: "16px",
-                  mt: 2,
-                  display: "grid",
-                  gridTemplateColumns: "1fr 1fr",
-                  gap: 3,
-                  textAlign: "center",
-                }}
-              >
-                <Box>
-                  <Typography variant="body2" sx={{ color: "#333" }}>
-                    <strong>Early Bird</strong>
-                  </Typography>
-                  <Typography
-                    variant="body1"
-                    sx={{ fontWeight: "bold", color: "#620b38" }}
-                  >
-                    ₹{raceData.price.earlyBird}
-                  </Typography>
-                  <Typography variant="body2" sx={{ fontSize: "12px" }}>
-                    {raceData.price.earlyBirdDate}
-                  </Typography>
+                  <Box>
+                    <Typography variant="body2" sx={{ color: "#333" }}>
+                      <strong>Regular</strong>
+                    </Typography>
+                    <Typography
+                      variant="subtitle1"
+                      sx={{
+                        color: "#757575",
+                        textDecoration: "line-through",
+                      }}
+                    >
+                      ₹{raceData.price.regular}
+                    </Typography>
+                    <Typography variant="body2" sx={{ fontSize: "12px" }}>
+                      {raceData.price.afterDate}
+                    </Typography>
+                  </Box>
                 </Box>
-                <Box>
-                  <Typography variant="body2" sx={{ color: "#333" }}>
-                    <strong>Regular</strong>
-                  </Typography>
-                  <Typography
-                    variant="subtitle1"
+
+                {/* Register Button */}
+                <Box sx={{ mt: 3 }}>
+                  <Button
+                    variant="contained"
+                    fullWidth
                     sx={{
-                      color: "#757575",
-                      textDecoration: "line-through",
+                      backgroundColor: "#620b38",
+                      color: "#fff",
                     }}
+                    href={raceData.registerLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
-                    ₹{raceData.price.regular}
-                  </Typography>
-                  <Typography variant="body2" sx={{ fontSize: "12px" }}>
-                    {raceData.price.afterDate}
-                  </Typography>
+                    Register Now
+                  </Button>
                 </Box>
-              </Box>
-
-              {/* Register Button */}
-              <Box sx={{ mt: 3 }}>
-                <Button
-                  variant="contained"
-                  fullWidth
-                  sx={{
-                    backgroundColor: "#620b38",
-                    color: "#fff",
-                  }}
-                  href={raceData.registerLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Register Now
-                </Button>
-              </Box>
+              </>
             </CardContent>
           </Card>
         </Box>
