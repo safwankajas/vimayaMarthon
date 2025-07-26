@@ -32,7 +32,7 @@ export default function EventLocation() {
         <Box
           sx={{
             position: "absolute",
-            top: 10,
+            top: "10%",
             right: 0,
             left: 0,
             bottom: 0,
