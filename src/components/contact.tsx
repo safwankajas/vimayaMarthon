@@ -30,10 +30,31 @@ export default function ContactUs() {
           borderRadius: 5,
           backgroundColor: "#ffffff",
           textAlign: "center",
+          position: "relative",
         }}
       >
+        <Box
+          sx={{
+            position: "absolute",
+            top: 0,
+            right: 0,
+            left: 0,
+            bottom: 0,
+            width: { xs: "100%", md: "100%" },
+            height: "100%",
+            backgroundImage: `url(/kochi4.png)`,
+            backgroundSize: "contain", // or try "cover"
+            backgroundRepeat: "repeat-x",
+            backgroundPosition: " bottom",
+            opacity: 0.08,
+            zIndex: 0,
+            borderTopRightRadius: "12px",
+            borderBottomRightRadius: "12px",
+          }}
+        />
         <Typography
-          variant="h4"
+          variant="zenHeadingh1"
+          fontSize={"3rem"}
           fontWeight={800}
           color="#7B1E3A"
           mb={1}
@@ -67,11 +88,17 @@ export default function ContactUs() {
           spacing={3}
           justifyContent="center"
           alignItems="center"
-          divider={<Divider orientation="vertical" flexItem />}
+          divider={
+            <Divider
+              sx={{ background: "#7B1E3A" }}
+              orientation="vertical"
+              flexItem
+            />
+          }
           sx={{ mb: 4, mt: 4 }}
         >
           <Stack sx={{ width: "50%" }} alignItems="center" spacing={1}>
-            <PhoneIcon sx={{ color: "#2563eb" }} />
+            <PhoneIcon sx={{ color: "#620b38" }} />
             <Typography
               sx={{ fontSize: { xs: 10, md: 20 } }}
               variant="body1"
@@ -82,7 +109,7 @@ export default function ContactUs() {
           </Stack>
 
           <Stack alignItems="center" spacing={1}>
-            <EmailIcon sx={{ color: "#2563eb" }} />
+            <EmailIcon sx={{ color: "#620b38" }} />
             <Typography
               variant="body1"
               color="text.secondary"
@@ -93,7 +120,7 @@ export default function ContactUs() {
           </Stack>
         </Stack>
 
-        <Divider sx={{ my: 3 }} />
+        <Divider sx={{ my: 3, background: "#7B1E3A" }} />
 
         <Typography
           mb={2}
