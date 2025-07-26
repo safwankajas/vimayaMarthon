@@ -21,6 +21,10 @@ const supportingPartners = [
     label: "Refreshment Partner",
     img: "/Fruitbae_logo.jpg",
   },
+  {
+    label: "T-Shirt Partner",
+    img: "/VANLEE UNIFORMS.png",
+  },
 ];
 
 export default function SponsorsSection() {
