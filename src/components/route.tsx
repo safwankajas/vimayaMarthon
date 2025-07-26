@@ -26,17 +26,39 @@ export default function EventLocation() {
           border: "1px solid rgba(255, 255, 255, 0.2)",
           color: "#000",
           boxShadow: 3,
+          position: "relative",
         }}
       >
+        <Box
+          sx={{
+            position: "absolute",
+            top: 0,
+            right: 0,
+            left: 10,
+            bottom: 0,
+
+            height: "100%",
+            backgroundImage: `url(/kochi1.png)`,
+            backgroundSize: "contain", // or try "cover"
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: " left top",
+            opacity: 0.1,
+            zIndex: 0,
+            borderTopRightRadius: "12px",
+            borderBottomRightRadius: "12px",
+          }}
+        />
+
         <CardContent
           sx={{
-            width: { md: "50%", xs: "100%" },
+            width: { md: "40%", xs: "100%" },
             m: "3px",
             borderRadius: 4,
             textAlign: "center",
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
+            zIndex: 1,
             justifyContent: "center",
           }}
         >
@@ -64,6 +86,7 @@ export default function EventLocation() {
         </CardContent>
         <Box
           sx={{
+            zIndex: 2,
             flex: 1,
             p: 1.5,
             m: 1,
