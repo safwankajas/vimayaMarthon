@@ -32,16 +32,16 @@ export default function EventLocation() {
         <Box
           sx={{
             position: "absolute",
-            top: 0,
+            top: 10,
             right: 0,
-            left: 10,
+            left: 0,
             bottom: 0,
 
             height: "100%",
             backgroundImage: `url(/kochi3.png)`,
             backgroundSize: "contain", // or try "cover"
             backgroundRepeat: "no-repeat",
-            backgroundPosition: " left center",
+            backgroundPosition: " left top",
             opacity: 0.3,
             zIndex: 0,
             borderTopRightRadius: "12px",
