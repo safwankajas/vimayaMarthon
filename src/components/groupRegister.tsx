@@ -33,7 +33,7 @@ export const RegistrationStatusCard = () => {
         <Box
           sx={{
             position: "absolute",
-            top: 0,
+            top: { xs: "15%", md: 0 },
             right: 0,
             left: 0,
             bottom: 0,
@@ -41,7 +41,7 @@ export const RegistrationStatusCard = () => {
             height: "100%",
             backgroundImage: `url(/kochi2.png)`,
             backgroundSize: "contain", // or try "cover"
-            // backgroundRepeat: "no-repeat",
+            backgroundRepeat: "repeat-x",
             backgroundPosition: " right",
             opacity: 0.1,
             zIndex: 0,
