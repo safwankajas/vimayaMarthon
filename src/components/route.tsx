@@ -38,11 +38,11 @@ export default function EventLocation() {
             bottom: 0,
 
             height: "100%",
-            backgroundImage: `url(/kochi1.png)`,
+            backgroundImage: `url(/kochi3.png)`,
             backgroundSize: "contain", // or try "cover"
             backgroundRepeat: "no-repeat",
-            backgroundPosition: " left top",
-            opacity: 0.1,
+            backgroundPosition: " left center",
+            opacity: 0.3,
             zIndex: 0,
             borderTopRightRadius: "12px",
             borderBottomRightRadius: "12px",
