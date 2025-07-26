@@ -15,6 +15,7 @@ export const RegistrationStatusCard = () => {
       <Paper
         elevation={10}
         sx={{
+          position: "relative",
           borderRadius: "12px",
           border: `1px solid ${theme.palette.divider}`,
           px: { xs: 2, md: 8 },
@@ -29,6 +30,25 @@ export const RegistrationStatusCard = () => {
           mY: 2,
         }}
       >
+        <Box
+          sx={{
+            position: "absolute",
+            top: 0,
+            right: 0,
+            left: 0,
+            bottom: 0,
+            width: { xs: "100%", md: "100%" },
+            height: "100%",
+            backgroundImage: `url(/kochi2.png)`,
+            backgroundSize: "contain", // or try "cover"
+            // backgroundRepeat: "no-repeat",
+            backgroundPosition: " right",
+            opacity: 0.1,
+            zIndex: 0,
+            borderTopRightRadius: "12px",
+            borderBottomRightRadius: "12px",
+          }}
+        />
         {/* Left: Icon + Text */}
         <Box
           display="flex"
