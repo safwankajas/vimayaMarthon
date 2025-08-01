@@ -16,32 +16,43 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 const navItems = ["Home", "About", "Sponsors", "Contact", "FAQ"];
 
 export const Header = () => {
+  const pathname = usePathname();
+  const isOnHomePage = pathname === "/";
+
   const [showCTA, setShowCTA] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [groupRegister, setGroupRegister] = useState(false);
+
   const logoImages = [
     "VISMAY RUN LOGO 1.png",
     "rotat emp.png",
     "vismay log 2.png",
   ];
-  // Toggle mobile drawer
-  const handleDrawerToggle = () => {
-    setMobileOpen((prev) => !prev);
-  };
+
   const [currentLogoIndex, setCurrentLogoIndex] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 150);
+
       const homeSection = document.getElementById("home");
       if (homeSection) {
         const rect = homeSection.getBoundingClientRect();
         const isHomeInView = rect.bottom > 0 && rect.top < window.innerHeight;
         setShowCTA(!isHomeInView);
+      }
+
+      const groupReg = document.getElementById("groupRegister");
+      if (groupReg) {
+        setGroupRegister(true);
+        setShowCTA(true);
+        setScrolled(true);
       }
     };
 
@@ -49,15 +60,16 @@ export const Header = () => {
     handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentLogoIndex((prevIndex) => (prevIndex + 1) % logoImages.length);
-    }, 2000); // Change every 2 seconds
-
+    }, 2000);
     return () => clearInterval(interval);
   }, []);
 
-  // Colors based on scroll
+  const handleDrawerToggle = () => setMobileOpen((prev) => !prev);
+
   const bgColor = scrolled ? "#620b38" : "rgba(0, 0, 0, 0.05)";
   const textColor = scrolled ? "#fff" : "#000";
 
@@ -83,7 +95,7 @@ export const Header = () => {
             paddingY: { xs: "4px", md: 0 },
           }}
         >
-          {/* Mobile logos row */}
+          {/* Mobile Logos Row */}
           {!showCTA ? (
             <Box
               sx={{
@@ -94,11 +106,7 @@ export const Header = () => {
                 mb: 1,
               }}
             >
-              {[
-                "VISMAY RUN LOGO 1.png",
-                "rotat emp.png",
-                "vismay log 2.png",
-              ].map((src, i) => (
+              {logoImages.map((src, i) => (
                 <Image
                   key={i}
                   src={`/${src}`}
@@ -118,37 +126,28 @@ export const Header = () => {
                 justifyContent: "space-between",
                 alignItems: "center",
                 width: "100%",
-                // mb: 1,
                 p: "5px",
               }}
             >
-              <>
-                <Image
-                  key={`Logo ${currentLogoIndex + 1}`}
-                  src={`/${logoImages[currentLogoIndex]}`}
-                  alt={`Logo ${currentLogoIndex + 1}`}
-                  width={100}
-                  height={100}
-                  style={{ objectFit: "contain" }}
-                  priority
-                />
-              </>
+              <Image
+                key={`Logo ${currentLogoIndex + 1}`}
+                src={`/${logoImages[currentLogoIndex]}`}
+                alt={`Logo ${currentLogoIndex + 1}`}
+                width={100}
+                height={100}
+                style={{ objectFit: "contain" }}
+                priority
+              />
               <Box>
                 <Button
-                  href="#register"
+                  href={isOnHomePage ? "#register" : "/#register"}
                   variant="contained"
                   sx={{
                     backgroundColor: textColor,
                     color: bgColor,
                     fontWeight: 600,
-                    pointerEvents: showCTA ? "auto" : "none",
-                    opacity: showCTA ? 1 : 0,
-                    ...(showCTA && {
-                      "&:hover": {
-                        backgroundColor: textColor,
-                        color: bgColor,
-                      },
-                    }),
+                    pointerEvents: showCTA && !groupRegister ? "auto" : "none",
+                    opacity: showCTA && !groupRegister ? 1 : 0,
                     textTransform: "none",
                     borderRadius: 2,
                     fontSize: 14,
@@ -161,7 +160,6 @@ export const Header = () => {
                 >
                   Register Now
                 </Button>
-
                 <IconButton
                   onClick={handleDrawerToggle}
                   sx={{ color: textColor }}
@@ -172,7 +170,8 @@ export const Header = () => {
               </Box>
             </Box>
           )}
-          {/* Desktop header */}
+
+          {/* Desktop Header */}
           <Box
             sx={{
               display: { xs: "none", lg: "flex" },
@@ -181,13 +180,9 @@ export const Header = () => {
               justifyContent: "space-between",
             }}
           >
-            {/* Logos and date */}
+            {/* Logos & Date */}
             <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
-              {[
-                "VISMAY RUN LOGO 1.png",
-                "rotat emp.png",
-                "vismay log 2.png",
-              ].map((src, i) => (
+              {logoImages.map((src, i) => (
                 <Image
                   key={i}
                   src={`/${src}`}
@@ -198,7 +193,6 @@ export const Header = () => {
                   priority
                 />
               ))}
-
               <Box sx={{ ml: 1 }}>
                 <Typography variant="subtitle2" fontWeight="bold">
                   05th October 2025
@@ -207,44 +201,38 @@ export const Header = () => {
               </Box>
             </Box>
 
-            {/* Navigation */}
+            {/* Desktop Navigation */}
             <Box sx={{ display: "flex", gap: 3 }}>
-              {navItems.map((item) => (
-                <Button
-                  key={item}
-                  href={`#${item.toLowerCase().replace(/\s+/g, "-")}`}
-                  sx={{
-                    color: textColor,
-                    fontWeight: 500,
-                    textTransform: "none",
-                    // borderBottom:
-                    //   item ===item
-                    //     ? "2px solid #fff"
-                    //     : "2px solid transparent",
-                    borderRadius: 0,
-                  }}
-                >
-                  {item}
-                </Button>
-              ))}
+              {navItems.map((item) => {
+                const sectionId = item.toLowerCase().replace(/\s+/g, "-");
+                const href = isOnHomePage ? `#${sectionId}` : `/#${sectionId}`;
+
+                return (
+                  <Button
+                    key={item}
+                    href={href}
+                    sx={{
+                      color: textColor,
+                      fontWeight: 500,
+                      textTransform: "none",
+                      borderRadius: 0,
+                    }}
+                  >
+                    {item}
+                  </Button>
+                );
+              })}
             </Box>
 
             {/* Register CTA */}
-
             <Button
-              href="#register"
+              href={isOnHomePage ? "#register" : "/#register"}
               variant="contained"
               sx={{
                 backgroundColor: textColor,
                 color: bgColor,
-                pointerEvents: showCTA ? "auto" : "none",
-                opacity: showCTA ? 1 : 0,
-                ...(showCTA && {
-                  "&:hover": {
-                    backgroundColor: textColor,
-                    color: bgColor,
-                  },
-                }),
+                pointerEvents: showCTA && !groupRegister ? "auto" : "none",
+                opacity: showCTA && !groupRegister ? 1 : 0,
                 fontWeight: 600,
                 textTransform: "none",
                 px: 3,
@@ -267,31 +255,33 @@ export const Header = () => {
       >
         <Box sx={{ p: 2 }}>
           <MenuList>
-            {navItems.map((item) => (
-              <MenuItem
-                key={item}
-                component="a"
-                href={`#${item.toLowerCase().replace(/\s+/g, "-")}`}
-                onClick={handleDrawerToggle}
-                sx={{
-                  "&:hover": {
-                    backgroundColor: "rgba(0, 0, 0, 0.05)",
-                    color: "#620b38",
-                  },
-                }}
-              >
-                <ListItemText
-                  primary={item}
-                  primaryTypographyProps={{ fontWeight: 500 }}
-                />
-              </MenuItem>
-            ))}
+            {navItems.map((item) => {
+              const sectionId = item.toLowerCase().replace(/\s+/g, "-");
+              const href = isOnHomePage ? `#${sectionId}` : `/#${sectionId}`;
+
+              return (
+                <MenuItem
+                  key={item}
+                  component="a"
+                  href={href}
+                  onClick={handleDrawerToggle}
+                  sx={{
+                    "&:hover": {
+                      backgroundColor: "rgba(0, 0, 0, 0.05)",
+                      color: "#620b38",
+                    },
+                  }}
+                >
+                  <ListItemText
+                    primary={item}
+                    primaryTypographyProps={{ fontWeight: 500 }}
+                  />
+                </MenuItem>
+              );
+            })}
           </MenuList>
         </Box>
       </Drawer>
-
-      {/* Toolbar spacer for sticky header */}
-      {/* <Toolbar /> */}
     </>
   );
 };
