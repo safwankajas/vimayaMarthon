@@ -17,7 +17,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import Image from "next/image";
 
-const navItems = ["Home", "About", "FAQ", "Sponsors", "Contact"];
+const navItems = ["Home", "About", "Sponsors", "Contact", "FAQ"];
 
 export const Header = () => {
   const [showCTA, setShowCTA] = useState(false);
@@ -217,10 +217,10 @@ export const Header = () => {
                     color: textColor,
                     fontWeight: 500,
                     textTransform: "none",
-                    borderBottom:
-                      item === "Home"
-                        ? "2px solid #fff"
-                        : "2px solid transparent",
+                    // borderBottom:
+                    //   item ===item
+                    //     ? "2px solid #fff"
+                    //     : "2px solid transparent",
                     borderRadius: 0,
                   }}
                 >
