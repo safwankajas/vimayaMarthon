@@ -50,7 +50,7 @@ export default function GroupRegisterPage() {
     return (
       <div
         style={{
-          backgroundImage: `url('/kochi1.png')`, // Update with your actual image
+          backgroundImage: `url('/kochi1.png')`,
           backgroundSize: "contain",
           backgroundPosition: "center",
           minHeight: "100vh",
@@ -97,12 +97,10 @@ export default function GroupRegisterPage() {
           >
             Home
           </Link>
-          <ContactUs />
-
-          <div
-            style={{ display: "flex", justifyContent: "center", gap: "1rem" }}
-          ></div>
         </div>
+        <Box sx={{ zIndex: 3, position: "relative" }}>
+          <ContactUs />
+        </Box>
       </div>
     );
   }

@@ -237,7 +237,7 @@ export const Header = () => {
                 textTransform: "none",
                 px: 3,
                 borderRadius: 1,
-                "&:hover": { backgroundColor: "#115293" },
+                "&:hover": { backgroundColor: "#fff" },
               }}
             >
               Register Now
