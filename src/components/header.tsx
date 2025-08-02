@@ -10,6 +10,7 @@ import {
   MenuList,
   MenuItem,
   ListItemText,
+  Skeleton,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
@@ -27,19 +28,20 @@ export const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [groupRegister, setGroupRegister] = useState(false);
-
+  const [currentLogoIndex, setCurrentLogoIndex] = useState(0);
   const logoImages = [
     "VISMAY RUN LOGO 1.png",
     "rotat emp.png",
     "vismay log 2.png",
   ];
 
-  const [currentLogoIndex, setCurrentLogoIndex] = useState(0);
+  const [loadedLogos, setLoadedLogos] = useState(
+    Array(logoImages.length).fill(false)
+  );
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 150);
-
       const homeSection = document.getElementById("home");
       if (homeSection) {
         const rect = homeSection.getBoundingClientRect();
@@ -97,7 +99,6 @@ export const Header = () => {
             paddingY: { xs: "4px", md: 0 },
           }}
         >
-          {/* Mobile Logos Row */}
           {!showCTA ? (
             <Box
               sx={{
@@ -110,15 +111,44 @@ export const Header = () => {
               }}
             >
               {logoImages.map((src, i) => (
-                <Image
+                <Box
                   key={i}
-                  src={`/${src}`}
-                  alt={`Logo ${i + 1}`}
-                  width={100}
-                  height={100}
-                  style={{ objectFit: "contain" }}
-                  priority
-                />
+                  sx={{ position: "relative", width: 100, height: 60 }}
+                >
+                  {!loadedLogos[i] && (
+                    <Skeleton
+                      variant="rectangular"
+                      width={100}
+                      height={60}
+                      sx={{
+                        position: "absolute",
+                        top: 0,
+                        left: 0,
+                        zIndex: 1,
+                        borderRadius: 1,
+                      }}
+                    />
+                  )}
+                  <Image
+                    src={`/${src}`}
+                    alt={`Logo ${i + 1}`}
+                    width={100}
+                    height={100}
+                    style={{
+                      objectFit: "contain",
+                      opacity: loadedLogos[i] ? 1 : 0,
+                      transition: "opacity 0.3s ease-in-out",
+                    }}
+                    onLoad={() => {
+                      setLoadedLogos((prev) => {
+                        const updated = [...prev];
+                        updated[i] = true;
+                        return updated;
+                      });
+                    }}
+                    priority
+                  />
+                </Box>
               ))}
             </Box>
           ) : (
@@ -183,7 +213,6 @@ export const Header = () => {
               justifyContent: "space-between",
             }}
           >
-            {/* Logos & Date */}
             <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
               {logoImages.map((src, i) => (
                 <Image
@@ -204,12 +233,10 @@ export const Header = () => {
               </Box>
             </Box>
 
-            {/* Desktop Navigation */}
             <Box sx={{ display: "flex", gap: 3 }}>
               {navItems.map((item) => {
                 const sectionId = item.toLowerCase().replace(/\s+/g, "-");
                 const href = isOnHomePage ? `#${sectionId}` : `/#${sectionId}`;
-
                 return (
                   <Button
                     key={item}
@@ -227,7 +254,6 @@ export const Header = () => {
               })}
             </Box>
 
-            {/* Register CTA */}
             <Button
               href={isOnHomePage ? "#register" : "/#register"}
               variant="contained"
@@ -249,7 +275,6 @@ export const Header = () => {
         </Toolbar>
       </AppBar>
 
-      {/* Mobile Drawer */}
       <Drawer
         anchor="top"
         open={mobileOpen}
@@ -261,7 +286,6 @@ export const Header = () => {
             {navItems.map((item) => {
               const sectionId = item.toLowerCase().replace(/\s+/g, "-");
               const href = isOnHomePage ? `#${sectionId}` : `/#${sectionId}`;
-
               return (
                 <MenuItem
                   key={item}

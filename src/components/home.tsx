@@ -8,7 +8,7 @@ export const HomePage = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setShowFirst(true);
-    }, 5000); // 10 seconds each
+    }, 10000); // 10 seconds each
 
     return () => clearInterval(interval);
   }, []);
@@ -158,7 +158,7 @@ export const HomePage = () => {
                     cursorStyle="_"
                     typeSpeed={100}
                     deleteSpeed={50}
-                    delaySpeed={4000}
+                    delaySpeed={5000}
                   />
                 </Typography>
               )}
