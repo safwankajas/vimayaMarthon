@@ -15,17 +15,17 @@ export default function Home() {
     <>
       <Header />
       {/* Hero Section */}
-      <section id="home">
-        <Box
-          sx={{
-            position: "relative",
-            height: "100vh",
-            overflow: "hidden",
-          }}
-        >
-          <HomePage />
-        </Box>
-      </section>
+
+      <Box
+        id="home"
+        sx={{
+          position: "relative",
+          height: "100vh",
+          overflow: "hidden",
+        }}
+      >
+        <HomePage />
+      </Box>
 
       {/* Registration Status */}
       <section>
