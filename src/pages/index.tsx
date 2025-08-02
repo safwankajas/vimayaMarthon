@@ -13,58 +13,56 @@ import { RegistrationStatusCard } from "@/components/groupRegister";
 export default function Home() {
   return (
     <>
-      <main>
-        <Header />
-        {/* Hero Section */}
-        <section id="home">
-          <Box
-            sx={{
-              position: "relative",
-              height: "100vh",
-              overflow: "hidden",
-            }}
-          >
-            <HomePage />
-          </Box>
-        </section>
+      <Header />
+      {/* Hero Section */}
+      <section id="home">
+        <Box
+          sx={{
+            position: "relative",
+            height: "100vh",
+            overflow: "hidden",
+          }}
+        >
+          <HomePage />
+        </Box>
+      </section>
 
-        {/* Registration Status */}
-        <section>
-          <Box sx={{ my: { xs: 0, md: 0 } }}>
-            <RegistrationStatusCard />
-          </Box>
-        </section>
+      {/* Registration Status */}
+      <section>
+        <Box sx={{ my: { xs: 0, md: 0 } }}>
+          <RegistrationStatusCard />
+        </Box>
+      </section>
 
-        {/* About */}
-        <section id="about">
-          <AboutSection />
-        </section>
+      {/* About */}
+      <section id="about">
+        <AboutSection />
+      </section>
 
-        {/* Register */}
-        <section id="register">
-          <Register />
-        </section>
+      {/* Register */}
+      <section id="register">
+        <Register />
+      </section>
 
-        {/* Event Route & Safety */}
-        <section>
-          <RouteSafety />
-        </section>
+      {/* Event Route & Safety */}
+      <section>
+        <RouteSafety />
+      </section>
 
-        {/* Sponsors */}
-        <section id="sponsors">
-          <SponsorsSection />
-        </section>
+      {/* Sponsors */}
+      <section id="sponsors">
+        <SponsorsSection />
+      </section>
 
-        {/* Contact */}
-        <section id="contact" style={{ background: "#620b38" }}>
-          <ContactUs />
-        </section>
+      {/* Contact */}
+      <section id="contact" style={{ background: "#620b38" }}>
+        <ContactUs />
+      </section>
 
-        {/* FAQ */}
-        <section id="faq">
-          <FAQSection />
-        </section>
-      </main>
+      {/* FAQ */}
+      <section id="faq">
+        <FAQSection />
+      </section>
 
       <Footer />
     </>
