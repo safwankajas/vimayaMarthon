@@ -142,7 +142,6 @@ export const HomePage = () => {
                   fontSize: { xs: "3.8rem", md: "5rem" },
                   color: "#ffffff",
                   lineHeight: 0.8,
-                  fontFamily: `"Roboto", sans-serif`,
                 }}
               >
                 <Typewriter
