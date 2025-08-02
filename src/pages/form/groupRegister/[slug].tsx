@@ -2,7 +2,7 @@
 
 import ContactUs from "@/components/contact";
 import { Header } from "@/components/header";
-import { Box } from "@mui/material";
+import { Box, Skeleton } from "@mui/material";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
@@ -44,7 +44,24 @@ export default function GroupRegisterPage() {
     }
   }, [slug]);
 
-  if (loading) return <p>Loading…</p>;
+  if (loading)
+    return (
+      <>
+        <Head>
+          <title>Vismay Run 2025</title>
+          <meta
+            name="description"
+            content="Register for Vismay Run 2025, the 5K women’s marathon in Kochi. Join us this September and claim your finisher medal."
+          />
+          <meta name="robots" content="index, follow" />
+          <link rel="canonical" href="https://vismayrun2025.in/" />
+        </Head>
+        <Header />
+        <Box id="groupRegister" sx={{ m: 2, mt: -10 }}>
+          <Skeleton height={"100vh"} />
+        </Box>
+      </>
+    );
 
   if (!formUrl) {
     return (
@@ -58,15 +75,6 @@ export default function GroupRegisterPage() {
           position: "relative",
         }}
       >
-        <Head>
-          <title>Vismay Run 2025</title>
-          <meta
-            name="description"
-            content="Register for Vismay Run 2025, the 5K women’s marathon in Kochi. Join us this September and claim your finisher medal."
-          />
-          <meta name="robots" content="index, follow" />
-          <link rel="canonical" href="https://vismayrun2025.in/" />
-        </Head>
         {/* Dark overlay */}
         <div
           style={{
@@ -116,6 +124,15 @@ export default function GroupRegisterPage() {
 
   return (
     <>
+      <Head>
+        <title>Vismay Run 2025</title>
+        <meta
+          name="description"
+          content="Register for Vismay Run 2025, the 5K women’s marathon in Kochi. Join us this September and claim your finisher medal."
+        />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://vismayrun2025.in/" />
+      </Head>
       <Header />
       <Box id="groupRegister" sx={{ mt: 7 }}>
         <iframe
