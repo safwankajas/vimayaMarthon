@@ -17,6 +17,7 @@ export default function GroupRegisterPage() {
 
   const [formUrl, setFormUrl] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
+  const [LoadingSkelton, setLoadingSkelton] = useState(true);
 
   useEffect(() => {
     if (slug && typeof slug === "string") {
@@ -132,6 +133,7 @@ export default function GroupRegisterPage() {
         <link rel="canonical" href="https://vismayrun2025.in/" />
       </Head>
       <Header />
+      {LoadingSkelton && <Skeleton sx={{ m: 2, mt: -10 }} height={"100vh"} />}
       <Box id="groupRegister" sx={{ mt: 7 }}>
         <iframe
           src={formUrl}
@@ -143,6 +145,7 @@ export default function GroupRegisterPage() {
             display: "block",
           }}
           allowFullScreen
+          onLoad={() => setLoadingSkelton(false)}
         >
           Loading…
         </iframe>
