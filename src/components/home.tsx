@@ -140,14 +140,14 @@ export const HomePage = () => {
                   position: "absolute",
                   mt: 1,
                   fontWeight: 700,
-                  fontSize: { xs: "4rem", md: "5rem" },
+                  fontSize: { xs: "3.8rem", md: "5rem" },
                   color: "#ffffff",
                   lineHeight: 0.8,
                   fontFamily: `"Roboto", sans-serif`,
                 }}
               >
                 <Typewriter
-                  words={["Empower.\nEndure.Excel.", " WOMEN’S  MARATHON"]}
+                  words={["Empower.\nEndure.Excel.", "WOMEN’S  MARATHON"]}
                   loop={false}
                   cursorStyle="_"
                   typeSpeed={100}
