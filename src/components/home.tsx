@@ -4,19 +4,14 @@ import { RegistrationStatusCard } from "./groupRegister";
 import Image from "next/image";
 
 export const HomePage = () => {
-  const [offsetY, setOffsetY] = useState(0);
-  const stopRef = useRef<HTMLDivElement | null>(null);
-
-  const handleScroll = () => {
-    setOffsetY(window.scrollY);
-  };
-
+  const [showFirst, setShowFirst] = useState(true);
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
+    const interval = setInterval(() => {
+      setShowFirst((prev) => !prev);
+    }, 5000); // 5 seconds each
 
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => clearInterval(interval);
   }, []);
-  const dynamicTranslate = offsetY < 450 ? -offsetY * 0.5 : -250;
 
   return (
     <>
@@ -103,7 +98,7 @@ export const HomePage = () => {
                 letterSpacing: "3px", // tighter spacing
                 transform: "scaley( 2.5)", // scaleX (width), scaleY (height)
                 textTransform: "uppercase",
-                fontFamily: `"Roboto", sans-serif`, // or a custom bold font if needed
+                fontFamily: `"Red Rose", sans-serif`, // or a custom bold font if needed
               }}
             >
               RUN
@@ -122,28 +117,48 @@ export const HomePage = () => {
             </Typography>
 
             {/* WOMEN’S MARATHON */}
-            <Typography
+
+            <Box
               sx={{
-                mt: 1,
-                fontWeight: 700,
-                fontSize: { xs: "4rem", md: "5rem" },
-                color: "#ffffff",
-                lineHeight: 0.8,
+                minHeight: { xs: "10rem", md: "12rem" },
+                position: "relative",
               }}
             >
-              WOMEN’S <br /> MARATHON
-            </Typography>
+              {showFirst ? (
+                <Typography
+                  sx={{
+                    position: "absolute", // Prevents layout shift
+                    mt: 1,
+                    fontWeight: 700,
+                    fontSize: { xs: "4rem", md: "5rem" },
+                    color: "#ffffff",
+                    lineHeight: 0.8,
+                    fontFamily: `"Red Rose", sans-serif`,
+                    transition: "opacity 0.5s ease",
+                  }}
+                >
+                  WOMEN’S <br /> MARATHON
+                </Typography>
+              ) : (
+                <Typography
+                  sx={{
+                    position: "absolute", // Prevents layout shift
+                    mt: 1,
+                    fontWeight: 700,
+                    fontSize: { xs: "4rem", md: "5rem" },
+                    color: "#ffffff",
+                    lineHeight: 0.8,
+                    fontFamily: `"Red Rose", sans-serif`,
+                    transition: "opacity 0.5s ease",
+                  }}
+                >
+                  Empower.
+                  <br />
+                  Excel.Endure.
+                </Typography>
+              )}
+            </Box>
           </Box>
-
-          {/* <Typography
-            variant="zenHeadingh1"
-            fontSize={"4rem"}
-            fontWeight="bold"
-          >
-            Empower.
-            <br />
-            Endure. Excel.
-          </Typography> */}
         </Container>
       </Box>
     </>
