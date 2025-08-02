@@ -43,16 +43,6 @@ export default function Document() {
         <meta name="theme-color" content="#620b38" />
 
         {/* Font Optimization */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Red+Rose:wght@300..700&display=swap"
-          rel="stylesheet"
-        />
 
         {/* Favicon */}
         <link rel="icon" href="/VISMAY-RUN-LOGO.ico" />

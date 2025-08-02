@@ -9,61 +9,67 @@ import ContactUs from "@/components/contact";
 import FAQSection from "@/components/faq";
 import Footer from "@/components/footer";
 import { RegistrationStatusCard } from "@/components/groupRegister";
+import { Red_Rose } from "next/font/google";
 
+const redRose = Red_Rose({
+  subsets: ["latin"],
+  weight: ["300", "400", "700"],
+  display: "swap",
+});
 export default function Home() {
   return (
     <>
       <Header />
       {/* Hero Section */}
-
-      <Box
-        id="home"
-        sx={{
-          position: "relative",
-          height: "100vh",
-          overflow: "hidden",
-        }}
-      >
-        <HomePage />
-      </Box>
-
-      {/* Registration Status */}
-      <section>
-        <Box sx={{ my: { xs: 0, md: 0 } }}>
-          <RegistrationStatusCard />
+      <main className={redRose.className}>
+        <Box
+          id="home"
+          sx={{
+            position: "relative",
+            height: "100vh",
+            overflow: "hidden",
+          }}
+        >
+          <HomePage />
         </Box>
-      </section>
 
-      {/* About */}
-      <section id="about">
-        <AboutSection />
-      </section>
+        {/* Registration Status */}
+        <section>
+          <Box sx={{ my: { xs: 0, md: 0 } }}>
+            <RegistrationStatusCard />
+          </Box>
+        </section>
 
-      {/* Register */}
-      <section id="register">
-        <Register />
-      </section>
+        {/* About */}
+        <section id="about">
+          <AboutSection />
+        </section>
 
-      {/* Event Route & Safety */}
-      <section>
-        <RouteSafety />
-      </section>
+        {/* Register */}
+        <section id="register">
+          <Register />
+        </section>
 
-      {/* Sponsors */}
-      <section id="sponsors">
-        <SponsorsSection />
-      </section>
+        {/* Event Route & Safety */}
+        <section>
+          <RouteSafety />
+        </section>
 
-      {/* Contact */}
-      <section id="contact" style={{ background: "#620b38" }}>
-        <ContactUs />
-      </section>
+        {/* Sponsors */}
+        <section id="sponsors">
+          <SponsorsSection />
+        </section>
 
-      {/* FAQ */}
-      <section id="faq">
-        <FAQSection />
-      </section>
+        {/* Contact */}
+        <section id="contact" style={{ background: "#620b38" }}>
+          <ContactUs />
+        </section>
 
+        {/* FAQ */}
+        <section id="faq">
+          <FAQSection />
+        </section>
+      </main>
       <Footer />
     </>
   );
