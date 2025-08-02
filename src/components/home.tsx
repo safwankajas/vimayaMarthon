@@ -25,7 +25,7 @@ export const HomePage = () => {
           src="/Home2.webp"
           alt="Vismay Run 2025 Hero Background"
           fill
-          priority
+          // priority
           style={{
             objectFit: "cover",
           }}
