@@ -1,14 +1,14 @@
-import React, { useEffect, useRef, useState } from "react";
-import { Box, Typography, Button, Container } from "@mui/material";
-import { RegistrationStatusCard } from "./groupRegister";
+import React, { useEffect, useState } from "react";
+import { Box, Typography, Container } from "@mui/material";
 import Image from "next/image";
+import { Typewriter } from "react-simple-typewriter";
 
 export const HomePage = () => {
-  const [showFirst, setShowFirst] = useState(true);
+  const [showFirst, setShowFirst] = useState(false);
   useEffect(() => {
     const interval = setInterval(() => {
-      setShowFirst((prev) => !prev);
-    }, 5000); // 5 seconds each
+      setShowFirst(true);
+    }, 5000); // 10 seconds each
 
     return () => clearInterval(interval);
   }, []);
@@ -124,7 +124,7 @@ export const HomePage = () => {
                 position: "relative",
               }}
             >
-              {showFirst ? (
+              {!showFirst ? (
                 <Typography
                   sx={{
                     position: "absolute", // Prevents layout shift
@@ -152,9 +152,14 @@ export const HomePage = () => {
                     transition: "opacity 0.5s ease",
                   }}
                 >
-                  Empower.
-                  <br />
-                  Excel.Endure.
+                  <Typewriter
+                    words={["Empower.\nEndure.Excel.", " WOMEN’S  MARATHON"]}
+                    loop={false}
+                    cursorStyle="_"
+                    typeSpeed={100}
+                    deleteSpeed={50}
+                    delaySpeed={4000}
+                  />
                 </Typography>
               )}
             </Box>
