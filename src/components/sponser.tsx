@@ -25,6 +25,10 @@ const supportingPartners = [
     label: "T-Shirt Partner",
     img: "/VANLEE UNIFORMS.png",
   },
+  {
+    label: "Sports Partner",
+    img: "/decathelon.jpg",
+  },
 ];
 
 export default function SponsorsSection() {
