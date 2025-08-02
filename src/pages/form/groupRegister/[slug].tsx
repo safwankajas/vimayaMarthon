@@ -1,12 +1,12 @@
 "use client";
 
 import ContactUs from "@/components/contact";
-import Footer from "@/components/footer";
 import { Header } from "@/components/header";
 import { Box } from "@mui/material";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import Head from "next/head";
 
 type GroupLink = {
   Group?: string;
@@ -58,6 +58,15 @@ export default function GroupRegisterPage() {
           position: "relative",
         }}
       >
+        <Head>
+          <title>Vismay Run 2025</title>
+          <meta
+            name="description"
+            content="Register for Vismay Run 2025, the 5K women’s marathon in Kochi. Join us this September and claim your finisher medal."
+          />
+          <meta name="robots" content="index, follow" />
+          <link rel="canonical" href="https://vismayrun2025.in/" />
+        </Head>
         {/* Dark overlay */}
         <div
           style={{
