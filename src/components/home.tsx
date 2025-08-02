@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Box, Typography, Button, Container } from "@mui/material";
 import { RegistrationStatusCard } from "./groupRegister";
+import Image from "next/image";
 
 export const HomePage = () => {
   const [offsetY, setOffsetY] = useState(0);
@@ -42,6 +43,7 @@ export const HomePage = () => {
           left: 0,
           right: 0,
           bottom: 0,
+
           background: "rgba(0, 0, 0, 0.3)",
           zIndex: 1,
         }}
@@ -58,7 +60,12 @@ export const HomePage = () => {
             justifyContent: "center",
           }}
         >
-          <Typography
+          {/* <Image src={"/VISMAY LOGO.png"} alt="run" width={300} height={900} /> */}
+          <Box sx={{ ml: 1, mt: { xs: "50%", md: "20%" } }}>
+            <Image src={"/run.webp"} alt="run" width={300} height={900} />
+          </Box>
+
+          {/* <Typography
             variant="zenHeadingh1"
             fontSize={"4rem"}
             fontWeight="bold"
@@ -66,7 +73,7 @@ export const HomePage = () => {
             Empower.
             <br />
             Endure. Excel.
-          </Typography>
+          </Typography> */}
         </Container>
       </Box>
     </>
