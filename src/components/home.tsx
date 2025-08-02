@@ -1,24 +1,10 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
-import { Box, Typography, Button, Container } from "@mui/material";
-import { RegistrationStatusCard } from "./groupRegister";
+import React from "react";
+import { Box, Typography, Container } from "@mui/material";
+import Image from "next/image";
 
 export const HomePage = () => {
-  const [offsetY, setOffsetY] = useState(0);
-  const stopRef = useRef<HTMLDivElement | null>(null);
-
-  const handleScroll = () => {
-    setOffsetY(window.scrollY);
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-  const dynamicTranslate = offsetY < 450 ? -offsetY * 0.5 : -250;
-
   return (
     <>
       <Box
@@ -28,15 +14,19 @@ export const HomePage = () => {
           left: 0,
           right: 0,
           bottom: 0,
-          backgroundImage: "url('/Home2.jpg')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          // transform: `translateY(${offsetY * 0.3}px)`,
-          // transition: "transform 0.1s ease-out",
-          zIndex: 1,
-          willChange: "transform",
+          zIndex: 0,
         }}
-      />
+      >
+        <Image
+          src="/Home2.jpg"
+          alt="Hero Background"
+          fill
+          priority
+          style={{
+            objectFit: "cover",
+          }}
+        />
+      </Box>
       <Box
         sx={{
           position: "absolute",
@@ -61,6 +51,7 @@ export const HomePage = () => {
           }}
         >
           <Typography
+            component="h1"
             variant="zenHeadingh1"
             fontSize={"4rem"}
             fontWeight="bold"
