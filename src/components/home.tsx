@@ -61,8 +61,78 @@ export const HomePage = () => {
           }}
         >
           {/* <Image src={"/VISMAY LOGO.png"} alt="run" width={300} height={900} /> */}
-          <Box sx={{ position: "absolute", bottom: 30 }}>
-            <Image src={"/run.webp"} alt="run" width={300} height={900} />
+          <Box
+            sx={{
+              position: "absolute",
+              bottom: 70,
+              left: 20,
+              zIndex: 10,
+              textAlign: "left",
+            }}
+          >
+            <Box
+              sx={{
+                borderRadius: "10px",
+                display: "flex", // Flex container
+                justifyContent: "center", // Horizontal center
+                alignItems: "center",
+                width: 160,
+                height: 50,
+                background: "rgba(255, 255, 255, 0.5)",
+                my: 2,
+                p: "2px",
+                pt: 1,
+              }}
+            >
+              <Image
+                src="/VISMAY LOGO.png"
+                alt="Vismay Logo"
+                width={140}
+                height={40}
+                style={{ objectFit: "contain", marginBottom: 8 }}
+              />
+            </Box>
+
+            {/* RUN – taller text using transform */}
+            <Typography
+              sx={{
+                fontWeight: 900,
+                fontSize: { xs: "4rem", md: "6rem" },
+                color: "#5f0a3d", // deep purple
+                lineHeight: 1.6,
+                letterSpacing: "3px", // tighter spacing
+                transform: "scaley( 2.5)", // scaleX (width), scaleY (height)
+                textTransform: "uppercase",
+                fontFamily: `"Roboto", sans-serif`, // or a custom bold font if needed
+              }}
+            >
+              RUN
+            </Typography>
+            {/* 2025 */}
+            <Typography
+              sx={{
+                my: 1,
+                fontWeight: 800,
+                fontSize: { xs: "4rem", md: "5rem" },
+                color: "#ffffff",
+                lineHeight: 1,
+              }}
+            >
+              2025
+            </Typography>
+
+            {/* WOMEN’S MARATHON */}
+            <Typography
+              sx={{
+                mt: 1,
+                fontWeight: 700,
+                fontSize: { xs: "4rem", md: "5rem" },
+                color: "#ffffff",
+                lineHeight: 0.8,
+              }}
+            >
+              WOMEN’S <br /> MARATHON
+            </Typography>
           </Box>
 
           {/* <Typography
