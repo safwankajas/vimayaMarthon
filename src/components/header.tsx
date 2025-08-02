@@ -20,7 +20,11 @@ import Head from "next/head";
 
 const navItems = ["Home", "About", "Sponsors", "Contact", "FAQ"];
 
-export const Header = () => {
+interface HeaderProps {
+  register?: boolean;
+}
+
+export const Header: React.FC<HeaderProps> = ({ register }) => {
   const pathname = usePathname();
   const isOnHomePage = pathname === "/";
 
@@ -179,8 +183,9 @@ export const Header = () => {
                     backgroundColor: textColor,
                     color: bgColor,
                     fontWeight: 600,
-                    pointerEvents: showCTA && !groupRegister ? "auto" : "none",
-                    opacity: showCTA && !groupRegister ? 1 : 0,
+                    pointerEvents:
+                      showCTA && !groupRegister && !register ? "auto" : "none",
+                    opacity: showCTA && !groupRegister && !register ? 1 : 0,
                     textTransform: "none",
                     borderRadius: 2,
                     fontSize: 14,
@@ -260,8 +265,9 @@ export const Header = () => {
               sx={{
                 backgroundColor: textColor,
                 color: bgColor,
-                pointerEvents: showCTA && !groupRegister ? "auto" : "none",
-                opacity: showCTA && !groupRegister ? 1 : 0,
+                pointerEvents:
+                  showCTA && !groupRegister && !register ? "auto" : "none",
+                opacity: showCTA && !groupRegister && !register ? 1 : 0,
                 fontWeight: 600,
                 textTransform: "none",
                 px: 3,
