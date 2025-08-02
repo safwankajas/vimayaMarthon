@@ -26,7 +26,7 @@ export const HomePage = () => {
           left: 0,
           right: 0,
           bottom: 0,
-          backgroundImage: "url('/Home2.webp')",
+          backgroundImage: "url('/home2.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           // transform: `translateY(${offsetY * 0.3}px)`,
