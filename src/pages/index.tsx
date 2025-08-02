@@ -2,14 +2,15 @@ import { Box } from "@mui/material";
 import { Header } from "../components/header";
 import { HomePage } from "@/components/home";
 import { AboutSection } from "@/components/about";
-import Register from "@/components/regiter";
-import RouteSafety from "@/components/route";
-import SponsorsSection from "@/components/sponser";
 import ContactUs from "@/components/contact";
-import FAQSection from "@/components/faq";
-import Footer from "@/components/footer";
 import { RegistrationStatusCard } from "@/components/groupRegister";
 import { Red_Rose } from "next/font/google";
+import dynamic from "next/dynamic";
+const Register = dynamic(() => import("@/components/regiter"));
+const RouteSafety = dynamic(() => import("@/components/route"));
+const SponsorsSection = dynamic(() => import("@/components/sponser"));
+const FAQSection = dynamic(() => import("@/components/faq"));
+const Footer = dynamic(() => import("@/components/footer"));
 
 const redRose = Red_Rose({
   subsets: ["latin"],
