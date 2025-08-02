@@ -56,6 +56,7 @@ export default function Document() {
 
         {/* Favicon */}
         <link rel="icon" href="/VISMAY-RUN-LOGO.ico" />
+        <link rel="preload" as="image" href="/home2.webp" />
       </Head>
       <body className="antialiased">
         <Main />
