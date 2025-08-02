@@ -15,6 +15,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import Head from "next/head";
 
 const navItems = ["Home", "About", "Sponsors", "Contact", "FAQ"];
 
@@ -54,8 +55,8 @@ export const Header = () => {
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
     handleScroll();
+    window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -73,6 +74,9 @@ export const Header = () => {
 
   return (
     <>
+      <Head>
+        <title>Vismay Run 2025</title>
+      </Head>
       <AppBar
         position="fixed"
         elevation={scrolled ? 4 : 0}

@@ -6,9 +6,6 @@ import Head from "next/head";
 export const HomePage = () => {
   return (
     <>
-      <Head>
-        <title>Vismay Run 2025</title>
-      </Head>
       <Box
         sx={{
           position: "absolute",
@@ -23,7 +20,7 @@ export const HomePage = () => {
           src="/Home2.webp"
           alt="Vismay Run 2025 Hero Background"
           fill
-          // priority
+          priority
           style={{
             objectFit: "cover",
           }}
