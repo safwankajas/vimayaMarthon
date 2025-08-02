@@ -1,4 +1,3 @@
-// pages/index.tsx
 import { Box } from "@mui/material";
 import { Header } from "../components/header";
 import { HomePage } from "@/components/home";
@@ -16,9 +15,9 @@ export default function Home() {
   return (
     <>
       <SEOHead />
-      <Header />
 
       <main>
+        <Header />
         {/* Hero Section */}
         <section id="home">
           <Box
