@@ -3,10 +3,14 @@
 import React from "react";
 import { Box, Typography, Container } from "@mui/material";
 import Image from "next/image";
+import Head from "next/head";
 
 export const HomePage = () => {
   return (
     <>
+      <Head>
+        <title>Vismay Run 2025</title>
+      </Head>
       <Box
         sx={{
           position: "absolute",
@@ -18,7 +22,7 @@ export const HomePage = () => {
         }}
       >
         <Image
-          src="/Home2.jpg"
+          src="/Home2.webp"
           alt="Vismay Run 2025 Hero Background"
           fill
           priority

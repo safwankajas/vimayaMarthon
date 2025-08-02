@@ -9,13 +9,10 @@ import ContactUs from "@/components/contact";
 import FAQSection from "@/components/faq";
 import Footer from "@/components/footer";
 import { RegistrationStatusCard } from "@/components/groupRegister";
-import { SEOHead } from "@/components/SEOHead";
 
 export default function Home() {
   return (
     <>
-      <SEOHead />
-
       <main>
         <Header />
         {/* Hero Section */}
