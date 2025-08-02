@@ -106,6 +106,7 @@ export const Header = () => {
                 width: "100%",
                 gap: 2,
                 mb: 1,
+                height: 50,
               }}
             >
               {logoImages.map((src, i) => (
