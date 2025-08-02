@@ -133,7 +133,7 @@ export const HomePage = () => {
                     fontSize: { xs: "4rem", md: "5rem" },
                     color: "#ffffff",
                     lineHeight: 0.8,
-                    fontFamily: `"Red Rose", sans-serif`,
+                    fontFamily: `"Roboto", sans-serif`,
                     transition: "opacity 0.5s ease",
                   }}
                 >
@@ -148,7 +148,7 @@ export const HomePage = () => {
                     fontSize: { xs: "4rem", md: "5rem" },
                     color: "#ffffff",
                     lineHeight: 0.8,
-                    fontFamily: `"Red Rose", sans-serif`,
+                    fontFamily: `"Roboto", sans-serif`,
                     transition: "opacity 0.5s ease",
                   }}
                 >
