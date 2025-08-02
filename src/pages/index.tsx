@@ -1,11 +1,14 @@
 import { Box } from "@mui/material";
-import { Header } from "../components/header";
+import { Header } from "@/components/header";
 import { HomePage } from "@/components/home";
 import { AboutSection } from "@/components/about";
 import ContactUs from "@/components/contact";
 import { RegistrationStatusCard } from "@/components/groupRegister";
 import { Red_Rose } from "next/font/google";
 import dynamic from "next/dynamic";
+import { GetStaticProps } from "next";
+
+// Dynamically loaded components
 const Register = dynamic(() => import("@/components/regiter"));
 const RouteSafety = dynamic(() => import("@/components/route"));
 const SponsorsSection = dynamic(() => import("@/components/sponser"));
@@ -17,12 +20,13 @@ const redRose = Red_Rose({
   weight: ["300", "400", "700"],
   display: "swap",
 });
+
 export default function Home() {
   return (
     <>
       <Header />
-      {/* Hero Section */}
       <main className={redRose.className}>
+        {/* Hero Section */}
         <Box
           id="home"
           sx={{
@@ -41,37 +45,46 @@ export default function Home() {
           </Box>
         </section>
 
-        {/* About */}
+        {/* About Section */}
         <section id="about">
           <AboutSection />
         </section>
 
-        {/* Register */}
+        {/* Register Section */}
         <section id="register">
           <Register />
         </section>
 
-        {/* Event Route & Safety */}
+        {/* Route & Safety Section */}
         <section>
           <RouteSafety />
         </section>
 
-        {/* Sponsors */}
+        {/* Sponsors Section */}
         <section id="sponsors">
           <SponsorsSection />
         </section>
 
-        {/* Contact */}
+        {/* Contact Section */}
         <section id="contact" style={{ background: "#620b38" }}>
           <ContactUs />
         </section>
 
-        {/* FAQ */}
+        {/* FAQ Section */}
         <section id="faq">
           <FAQSection />
         </section>
       </main>
+
+      {/* Footer */}
       <Footer />
     </>
   );
 }
+
+// Enable Static Site Generation
+export const getStaticProps: GetStaticProps = async () => {
+  return {
+    props: {}, // Add props if needed in the future
+  };
+};
