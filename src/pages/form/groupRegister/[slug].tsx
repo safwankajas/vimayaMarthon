@@ -1,5 +1,3 @@
-"use client";
-
 import ContactUs from "@/components/contact";
 import { Header } from "@/components/header";
 import { Box, Skeleton } from "@mui/material";
