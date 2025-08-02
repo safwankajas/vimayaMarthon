@@ -129,7 +129,6 @@ export const HomePage = () => {
                   fontSize: { xs: "4rem", md: "5rem" },
                   color: "#ffffff",
                   lineHeight: 0.8,
-                  fontFamily: `"Roboto", sans-serif`,
                 }}
               >
                 WOMEN’S <br /> MARATHON
