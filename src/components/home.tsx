@@ -19,7 +19,7 @@ export const HomePage = () => {
       >
         <Image
           src="/Home2.jpg"
-          alt="Hero Background"
+          alt="Vismay Run 2025 Hero Background"
           fill
           priority
           style={{
