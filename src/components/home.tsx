@@ -61,7 +61,7 @@ export const HomePage = () => {
           }}
         >
           {/* <Image src={"/VISMAY LOGO.png"} alt="run" width={300} height={900} /> */}
-          <Box sx={{ ml: 1, mt: { xs: "50%", md: "20%" } }}>
+          <Box sx={{ position: "absolute", bottom: 0 }}>
             <Image src={"/run.webp"} alt="run" width={300} height={900} />
           </Box>
 
