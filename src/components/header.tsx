@@ -18,7 +18,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import Head from "next/head";
 
-const navItems = ["Home", "About", "Sponsors", "Contact", "FAQ"];
+const navItems = ["Home", "About", "Sponsors", "Contact", "FAQ","Terms"];
 
 interface HeaderProps {
   register?: boolean;
@@ -76,7 +76,7 @@ export const Header: React.FC<HeaderProps> = ({ register }) => {
   const handleDrawerToggle = () => setMobileOpen((prev) => !prev);
 
   const bgColor = scrolled ? "#620b38" : "rgba(0, 0, 0, 0.05)";
-  const textColor = scrolled ? "#fff" : "#000";
+  const textColor = scrolled ? "#fff" : "#fff";
 
   return (
     <>
@@ -241,7 +241,7 @@ export const Header: React.FC<HeaderProps> = ({ register }) => {
             <Box sx={{ display: "flex", gap: 3 }}>
               {navItems.map((item) => {
                 const sectionId = item.toLowerCase().replace(/\s+/g, "-");
-                const href = isOnHomePage ? `#${sectionId}` : `/#${sectionId}`;
+                const href = isOnHomePage ? item==="Terms"?`${sectionId}`:`#${sectionId}` : item==="Terms"?`/${sectionId}`:`/#${sectionId}`;
                 return (
                   <Button
                     key={item}
@@ -291,7 +291,7 @@ export const Header: React.FC<HeaderProps> = ({ register }) => {
           <MenuList>
             {navItems.map((item) => {
               const sectionId = item.toLowerCase().replace(/\s+/g, "-");
-              const href = isOnHomePage ? `#${sectionId}` : `/#${sectionId}`;
+              const href = isOnHomePage ? item==="Terms"?`${sectionId}`:`#${sectionId}` : item==="Terms"?`/${sectionId}`:`/#${sectionId}`;;
               return (
                 <MenuItem
                   key={item}
