@@ -44,8 +44,10 @@ const TermsAndConditions = () => {
           maxWidth: "1000px",
           mx: "auto",
         }}
+        
       >
         <Typography
+        id="groupRegister"
           className={redRose.className}
           variant="zenHeadingh1"
           component="h1"

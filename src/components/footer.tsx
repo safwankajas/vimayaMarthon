@@ -23,14 +23,14 @@ export default function Footer() {
           </Typography>
 
           <Stack direction="row" spacing={3}>
-            <Link
+            {/* <Link
               href="/privacy"
               underline="hover"
               color="inherit"
               sx={{ fontSize: "14px" }}
             >
               Privacy Policy
-            </Link>
+            </Link> */}
             <Link
               href="/terms"
               underline="hover"
@@ -39,14 +39,14 @@ export default function Footer() {
             >
               Terms & Conditions
             </Link>
-            <Link
+            {/* <Link
               href="/volunteer"
               underline="hover"
               color="inherit"
               sx={{ fontSize: "14px", fontWeight: 500 }}
             >
               Volunteer Signup
-            </Link>
+            </Link> */}
           </Stack>
         </Stack>
       </Container>
