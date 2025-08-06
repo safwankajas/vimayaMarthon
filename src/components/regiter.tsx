@@ -17,7 +17,7 @@ const Register = () => {
       earlyBird: 399,
       regular: 499,
       earlyBirdDate: "Until Aug 15",
-      afterDate: "After Aug 15",
+      afterDate: "After Aug 20",
     },
     includes: [
       { imgSrc: "/shirt.png", label: "Branded T-Shirt" },

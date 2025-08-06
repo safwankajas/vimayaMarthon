@@ -1,11 +1,9 @@
-// components/RegistrationStatusCard.tsx
-
 "use client";
 
 import React from "react";
 import { Box, Typography, Button, Paper, Stack, useTheme } from "@mui/material";
-import CheckCircleOutlinedIcon from "@mui/icons-material/CheckCircleOutlined";
 import GroupOutlinedIcon from "@mui/icons-material/GroupOutlined";
+import Link from "next/link";
 
 export const RegistrationStatusCard = () => {
   const theme = useTheme();
@@ -40,9 +38,9 @@ export const RegistrationStatusCard = () => {
             width: { xs: "100%", md: "100%" },
             height: "100%",
             backgroundImage: `url(/kochi2.png)`,
-            backgroundSize: "contain", // or try "cover"
+            backgroundSize: "contain",
             backgroundRepeat: "repeat-x",
-            backgroundPosition: " bottom",
+            backgroundPosition: "bottom",
             opacity: 0.1,
             zIndex: 0,
             borderTopRightRadius: "12px",
@@ -54,7 +52,7 @@ export const RegistrationStatusCard = () => {
           display="flex"
           alignItems="flex-start"
           gap={2}
-          sx={{ width: { xs: "100%", md: "60%" } }}
+          sx={{ width: { xs: "100%", md: "60%" }, position: "relative", zIndex: 1 }}
         >
           <Box>
             <Typography variant="zenHeadingh1" fontWeight="700" fontSize={30}>
@@ -87,7 +85,7 @@ export const RegistrationStatusCard = () => {
               color="text.secondary"
               fontSize={14}
             >
-              Reporting: 5:30 AM | Flag-off: 6:30 AM
+              Reporting: 6:00 AM | Flag-off: 6:30 AM
             </Typography>
           </Box>
         </Box>
@@ -97,6 +95,7 @@ export const RegistrationStatusCard = () => {
           direction={{ xs: "column", md: "row" }}
           spacing={2}
           width={{ xs: "100%", md: "50%" }}
+          sx={{ position: "relative", zIndex: 1 }}
         >
           <Button
             fullWidth
@@ -113,22 +112,63 @@ export const RegistrationStatusCard = () => {
           >
             Register Now
           </Button>
-          <Button
-            fullWidth
-            variant="outlined"
-            href="#group-registration"
-            startIcon={<GroupOutlinedIcon />}
+
+          <Box
             sx={{
+              border: "2px solid #620b38",
+              borderRadius: 2,
+              display: "flex",
+              flexDirection: { xs: "column", md: "row" },
+              alignItems: { xs: "flex-start", md: "center" },
+              cursor: "pointer",
+              width: "100%",
+              px: 3,
+              py:"3px",
               color: "#620b38",
               fontWeight: "bold",
-              borderRadius: 2,
-              border: "2px solid #620b38",
-              px: 3,
               textTransform: "none",
+              justifyContent: "space-between",
+              "&:hover": { backgroundColor: "rgba(98, 11, 56, 0.1)" },
             }}
           >
-            Group Registration
-          </Button>
+            <Link href="#contact" passHref legacyBehavior>
+              <Box
+                component="a"
+                sx={{
+                  flexGrow: 1,
+                  textDecoration: "none",
+                  color: "inherit",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 1,
+                  fontSize: 12,
+                }}
+              >
+                <GroupOutlinedIcon />
+                Group Registration
+              </Box>
+            </Link>
+
+            <Link href="mailto:rctripunithuraroyale24@gmail.com" passHref legacyBehavior>
+              <Box
+                component="a"
+                sx={{
+                  color: "gray",
+                  fontWeight: "normal",
+                  mt: { xs: 0, md: 0 },
+                  ml: { xs: '20%', md: 2 },
+                  borderLeft: { xs: "none", md: "1px solid gray" },
+                  pl: { xs: 0, md: 2 },
+                  // mb:{xs:1,md:0},
+                  fontSize: 10,
+                  whiteSpace: "nowrap",
+                  textDecoration: "none",
+                }}
+              >
+                Contact Organizer
+              </Box>
+            </Link>
+          </Box>
         </Stack>
       </Paper>
     </Box>
