@@ -25,9 +25,10 @@ export const RegistrationStatusCard = () => {
           justifyContent: "space-between",
           alignItems: { xs: "flex-start", md: "center" },
           gap: 3,
-          mY: 2,
+          my: 2,
         }}
       >
+        {/* Background Image */}
         <Box
           sx={{
             position: "absolute",
@@ -35,7 +36,7 @@ export const RegistrationStatusCard = () => {
             right: 0,
             left: 0,
             bottom: 0,
-            width: { xs: "100%", md: "100%" },
+            width: "100%",
             height: "100%",
             backgroundImage: `url(/kochi2.png)`,
             backgroundSize: "contain",
@@ -47,7 +48,8 @@ export const RegistrationStatusCard = () => {
             borderBottomRightRadius: "12px",
           }}
         />
-        {/* Left: Icon + Text */}
+
+        {/* Left Content */}
         <Box
           display="flex"
           alignItems="flex-start"
@@ -90,7 +92,7 @@ export const RegistrationStatusCard = () => {
           </Box>
         </Box>
 
-        {/* Right: Buttons */}
+        {/* Buttons */}
         <Stack
           direction={{ xs: "column", md: "row" }}
           spacing={2}
@@ -106,6 +108,7 @@ export const RegistrationStatusCard = () => {
               fontWeight: "bold",
               borderRadius: 2,
               px: 3,
+              py:"3px",
               textTransform: "none",
               boxShadow: 2,
             }}
@@ -113,21 +116,24 @@ export const RegistrationStatusCard = () => {
             Register Now
           </Button>
 
+          {/* Group & Contact - Responsive layout */}
           <Box
             sx={{
               border: "2px solid #620b38",
               borderRadius: 2,
               display: "flex",
               flexDirection: { xs: "column", md: "row" },
-              alignItems: { xs: "flex-start", md: "center" },
+              alignItems: "center",
+              justifyContent: { xs: "center", md: "space-between" },
+              textAlign: { xs: "center", md: "left" },
               cursor: "pointer",
               width: "100%",
               px: 3,
-              py:"3px",
+              py: "6px",
               color: "#620b38",
               fontWeight: "bold",
               textTransform: "none",
-              justifyContent: "space-between",
+              gap: { xs: 0.5, md: 0 },
               "&:hover": { backgroundColor: "rgba(98, 11, 56, 0.1)" },
             }}
           >
@@ -135,16 +141,17 @@ export const RegistrationStatusCard = () => {
               <Box
                 component="a"
                 sx={{
-                  flexGrow: 1,
                   textDecoration: "none",
                   color: "inherit",
                   display: "flex",
                   alignItems: "center",
+                  justifyContent: "center",
                   gap: 1,
-                  fontSize: 12,
+                  fontSize: 13,
+                  width: "100%",
                 }}
               >
-                <GroupOutlinedIcon />
+                <GroupOutlinedIcon sx={{ fontSize: 15 }} />
                 Group Registration
               </Box>
             </Link>
@@ -155,12 +162,11 @@ export const RegistrationStatusCard = () => {
                 sx={{
                   color: "gray",
                   fontWeight: "normal",
-                  mt: { xs: 0, md: 0 },
-                  ml: { xs: '20%', md: 2 },
+                  mt: { xs: 0.1, md: 0 },
+                  ml: { xs: 0, md: 2 },
                   borderLeft: { xs: "none", md: "1px solid gray" },
                   pl: { xs: 0, md: 2 },
-                  // mb:{xs:1,md:0},
-                  fontSize: 10,
+                  fontSize: 11,
                   whiteSpace: "nowrap",
                   textDecoration: "none",
                 }}
