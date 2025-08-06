@@ -55,7 +55,7 @@ export const HomePage = () => {
         <Box
           sx={{
             position: "absolute",
-            bottom: 70,
+            bottom: 0,
             left: 20,
             zIndex: 4,
             textAlign: "left",
@@ -139,7 +139,7 @@ export const HomePage = () => {
                   position: "absolute",
                   mt: 1,
                   fontWeight: 700,
-                  fontSize: { xs: "3.8rem", md: "5rem" },
+                  fontSize: { xs: "3.5rem", md: "5rem" },
                   color: "#ffffff",
                   lineHeight: 0.8,
                 }}

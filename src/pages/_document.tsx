@@ -45,7 +45,7 @@ export default function Document() {
         {/* Font Optimization */}
 
         {/* Favicon */}
-        <link rel="icon" href="/VISMAY-RUN-LOGO.ico" />
+        <link rel="icon" href="/favicon.ico" />
         <link rel="preload" as="image" href="/home2.jpg" />
       </Head>
       <body className="antialiased">
