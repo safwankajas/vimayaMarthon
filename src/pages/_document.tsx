@@ -5,6 +5,7 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
+        <title>Vismay Marathon 2025 | 5K Run in Kochi</title>
         <meta
           name="description"
           content="Join the Vismay Run 2025 in Kochi on October 5. Celebrate endurance, fitness, and fun in our 5K marathon event. Register now!"
