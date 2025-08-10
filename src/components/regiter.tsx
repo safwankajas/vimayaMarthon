@@ -16,7 +16,7 @@ const Register = () => {
     price: {
       earlyBird: 399,
       regular: 499,
-      earlyBirdDate: "Until Aug 15",
+      earlyBirdDate: "Until Aug 20",
       afterDate: "After Aug 20",
     },
     includes: [
