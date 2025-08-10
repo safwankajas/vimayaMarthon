@@ -81,7 +81,7 @@ export default function EventLocation() {
           </Typography>
 
           <Typography fontWeight={"bold"} sx={{ mb: 2 }}>
-            Durbar Hall Ground, Ernakulam | 6:30 AM
+            Durbar Hall Ground, Ernakulam | 6:00 AM
           </Typography>
         </CardContent>
         <Box
