@@ -10,7 +10,7 @@ const organizer = {
 
 const supportingPartners = [
   {
-    label: "Transport partner",
+    label: "Travel partner",
     img: "/KMRL_log.png",
   },
   {
@@ -18,8 +18,8 @@ const supportingPartners = [
     img: "/SIB_logo.png",
   },
   {
-    label: "Refreshment Partner",
-    img: "/Fruitbae_logo.jpg",
+    label: "Physio Partner",
+    img: "/w1.png",
   },
   {
     label: "T-Shirt Partner",
