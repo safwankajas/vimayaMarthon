@@ -29,6 +29,11 @@ const supportingPartners = [
     label: "Sports Partner",
     img: "/decathelon.jpg",
   },
+
+  {
+    label: "Media Partner",
+    img: "/24 NEWS.png",
+  },
 ];
 
 export default function SponsorsSection() {

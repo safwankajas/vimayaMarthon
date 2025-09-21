@@ -134,7 +134,7 @@ export default function ContactUs() {
         <Stack direction="row" spacing={3} justifyContent="center">
           <IconButton
             component={Link}
-            href="https://instagram.com/vismayrun"
+            href="https://www.instagram.com/royaletripunithurarotary"
             target="_blank"
             rel="noopener"
             sx={{
@@ -150,7 +150,7 @@ export default function ContactUs() {
 
           <IconButton
             component={Link}
-            href="https://fb.com/vismayrun2025"
+            href="https://www.facebook.com/share/17KZzJtdtX/?mibextid=wwXIfr"
             target="_blank"
             rel="noopener"
             sx={{

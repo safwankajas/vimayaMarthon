@@ -176,7 +176,11 @@ const Register = () => {
                     </Typography>
                     <Typography
                       variant="body1"
-                      sx={{ fontWeight: "bold", color: "#620b38" }}
+                      sx={{
+                        fontWeight: "bold",
+                        color: "#620b38",
+                        textDecoration: "line-through",
+                      }}
                     >
                       ₹{raceData.price.earlyBird}
                     </Typography>
@@ -192,7 +196,6 @@ const Register = () => {
                       variant="subtitle1"
                       sx={{
                         color: "#757575",
-                        textDecoration: "line-through",
                       }}
                     >
                       ₹{raceData.price.regular}

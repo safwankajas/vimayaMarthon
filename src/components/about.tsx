@@ -182,24 +182,26 @@ export const AboutSection = () => {
           onAutoplayTimeLeft={onAutoplayTimeLeft}
           style={{ height: "100%" }}
         >
-          {["/vismayphoto1.jpg", "/vismayphoto2.jpg"].map((src, i) => (
-            <SwiperSlide key={i}>
-              <Card sx={{ height: { xs: 350, md: 450 } }}>
-                <Image
-                  src={src}
-                  alt={`Slide ${i + 1}`}
-                  width={200}
-                  height={150}
-                  style={{
-                    width: "100%",
-                    height: "100%",
+          {["/vismayphoto1.jpg", "/vismayphoto2.jpg", "/vismayphoto3.jpg"].map(
+            (src, i) => (
+              <SwiperSlide key={i}>
+                <Card sx={{ height: { xs: 350, md: 450 } }}>
+                  <Image
+                    src={src}
+                    alt={`Slide ${i + 1}`}
+                    width={200}
+                    height={150}
+                    style={{
+                      width: "100%",
+                      height: "100%",
 
-                    objectFit: "cover",
-                  }}
-                />
-              </Card>
-            </SwiperSlide>
-          ))}
+                      objectFit: "cover",
+                    }}
+                  />
+                </Card>
+              </SwiperSlide>
+            )
+          )}
 
           {/* Progress Indicator */}
         </Swiper>
