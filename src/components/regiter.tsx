@@ -177,8 +177,7 @@ const Register = () => {
                     <Typography
                       variant="body1"
                       sx={{
-                        fontWeight: "bold",
-                        color: "#620b38",
+                        color: "#757575",
                         textDecoration: "line-through",
                       }}
                     >
@@ -195,7 +194,8 @@ const Register = () => {
                     <Typography
                       variant="subtitle1"
                       sx={{
-                        color: "#757575",
+                        fontWeight: "bold",
+                        color: "#620b38",
                       }}
                     >
                       ₹{raceData.price.regular}
