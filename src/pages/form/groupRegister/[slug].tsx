@@ -8,7 +8,8 @@ import Head from "next/head";
 
 type GroupLink = {
   Group?: string;
-  URL?: string;
+  "Short Url"?: string;
+  "Public Url"?: string;
 };
 
 export default function GroupRegisterPage() {
@@ -32,11 +33,15 @@ export default function GroupRegisterPage() {
             (row) => row.Group?.trim().toLowerCase() === cleanedSlug
           );
 
-          setFormUrl(matched?.URL?.trim() || null);
+          if (!matched) {
+            console.warn("❌ Group not found for slug:", slug);
+          }
+
+          setFormUrl(matched?.["Short Url"]?.trim() || null);
           setLoading(false);
         })
         .catch((err) => {
-          console.error("Failed to fetch form links", err);
+          console.error("🚨 Failed to fetch form links:", err);
           setFormUrl(null);
           setLoading(false);
         });
@@ -97,6 +102,11 @@ export default function GroupRegisterPage() {
           <h2 style={{ fontSize: "2rem", marginBottom: "1rem" }}>
             ❌ Sorry, group not found
           </h2>
+          {slug && (
+            <p style={{ marginBottom: "1rem" }}>
+              We couldn’t find a registration link for: <strong>{slug}</strong>
+            </p>
+          )}
           <p style={{ marginBottom: "2rem" }}>
             Please check the URL or contact support.
           </p>
