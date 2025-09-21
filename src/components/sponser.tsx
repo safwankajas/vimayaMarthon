@@ -43,6 +43,10 @@ const supportingPartners = [
     label: "Promo Partner",
     img: "/raga.png",
   },
+  {
+    label: "Comfort  Partner",
+    img: "/comfort.png",
+  },
 ];
 
 export default function SponsorsSection() {
