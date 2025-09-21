@@ -1,11 +1,15 @@
 "use client";
 
-import { Box, Typography, Grid, Paper, Stack } from "@mui/material";
+import { Box, Typography, Grid, Paper } from "@mui/material";
 import Image from "next/image";
 
 const organizer = {
   label: "Title sponsor",
   img: "/VISMAY LOGO.png", // Replace with your actual organizer logo path
+};
+const Powered_By = {
+  label: "Powered by",
+  imgs: ["/SIB_logo.png", "/cyrix.png"], // can add more
 };
 
 const supportingPartners = [
@@ -13,10 +17,7 @@ const supportingPartners = [
     label: "Travel partner",
     img: "/KMRL_log.png",
   },
-  {
-    label: "Banking Partner",
-    img: "/SIB_logo.png",
-  },
+
   {
     label: "Physio Partner",
     img: "/w1.png",
@@ -34,6 +35,14 @@ const supportingPartners = [
     label: "Media Partner",
     img: "/24 NEWS.png",
   },
+  {
+    label: "Zumba Partner",
+    img: "/ZAPPERS.png",
+  },
+  {
+    label: "Promo Partner",
+    img: "/raga.png",
+  },
 ];
 
 export default function SponsorsSection() {
@@ -48,7 +57,7 @@ export default function SponsorsSection() {
 
       {/* Organizer */}
 
-      <Box mt={1} mb={1}>
+      <Box mt={1} mb={3}>
         <Typography variant="zenHeadingh1" fontSize={"1.5rem"} fontWeight={700}>
           {organizer.label}
         </Typography>
@@ -67,6 +76,33 @@ export default function SponsorsSection() {
             fill
             style={{ objectFit: "contain" }}
           />
+        </Box>
+      </Box>
+      <Box mt={3} mb={1}>
+        <Typography variant="zenHeadingh1" fontSize={"1.5rem"} fontWeight={700}>
+          {Powered_By.label}
+        </Typography>
+
+        <Box
+          sx={{
+            mt: -2,
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            gap: 5,
+            flexWrap: "wrap", // ensures responsiveness
+          }}
+        >
+          {Powered_By.imgs.map((src, i) => (
+            <Box key={i} sx={{ width: 200, height: 150, position: "relative" }}>
+              <Image
+                src={src}
+                alt={`${Powered_By.label} ${i + 1}`}
+                fill
+                style={{ objectFit: "contain" }}
+              />
+            </Box>
+          ))}
         </Box>
       </Box>
 
