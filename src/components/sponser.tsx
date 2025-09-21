@@ -94,7 +94,7 @@ export default function SponsorsSection() {
           }}
         >
           {Powered_By.imgs.map((src, i) => (
-            <Box key={i} sx={{ width: 200, height: 150, position: "relative" }}>
+            <Box key={i} sx={{ width: 100, height: 150, position: "relative" }}>
               <Image
                 src={src}
                 alt={`${Powered_By.label} ${i + 1}`}
