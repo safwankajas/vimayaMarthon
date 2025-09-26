@@ -20,7 +20,7 @@ const Register = () => {
       afterDate: "After Aug 20",
     },
     includes: [
-      { imgSrc: "/shirt.png", label: "Branded T-Shirt" },
+      { imgSrc: "/shirt.png", label: "Branded T-Shirt (until Sep 25)" },
       { imgSrc: "/medal.png", label: "Finisher Medal" },
       { imgSrc: "/bib.png", label: "Bib Number" },
       { imgSrc: "/water.png", label: "Refreshments & Hydration" },
