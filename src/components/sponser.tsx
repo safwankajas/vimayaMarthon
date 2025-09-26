@@ -47,6 +47,10 @@ const supportingPartners = [
     label: "Comfort  Partner",
     img: "/comfort.png",
   },
+  {
+    label: "Nutrition Partner",
+    img: "/nutrition.png",
+  },
 ];
 
 export default function SponsorsSection() {
