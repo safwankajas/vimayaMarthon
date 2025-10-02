@@ -10,6 +10,7 @@ export default function Document() {
           name="description"
           content="Join the Vismay Run 2025 in Kochi on October 5. Celebrate endurance, fitness, and fun in our 5K marathon event. Register now!"
         />
+        <title>Vismay run 2025 Kochi Marathon</title>
         <meta
           name="keywords"
           content="Vismay Run, Kochi Marathon, 5K Run, Sports Event, October 2025, Vismay 2025, Kerala Event"
