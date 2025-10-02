@@ -107,7 +107,7 @@ export default function SpotRegistration() {
       <Stack direction={{ xs: "column", md: "row" }} spacing={2} sx={{ mt: 6 }}>
         <Button
           variant="contained"
-          href="https://maps.app.goo.gl/bkxNwNfDDMNp5VtB9"
+          href="https://maps.app.goo.gl/NTUpX6XkcLn6SqZV6?g_st=ipc"
           target="_blank"
           rel="noopener noreferrer"
           sx={{
@@ -123,7 +123,7 @@ export default function SpotRegistration() {
         </Button>
         <Button
           variant="contained"
-          href="https://maps.app.goo.gl/3QtV5Fg7EY8s7cRP8"
+          href="https://maps.app.goo.gl/Wud9mgHmXvMBbzHT6?g_st=ipc"
           target="_blank"
           rel="noopener noreferrer"
           sx={{
