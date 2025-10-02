@@ -55,6 +55,10 @@ const supportingPartners = [
     label: "Sponsorship Partner",
     img: "/sponsor.png",
   },
+  {
+    label: "Associating organization",
+    img: "/associ.jpeg",
+  },
 ];
 
 export default function SponsorsSection() {

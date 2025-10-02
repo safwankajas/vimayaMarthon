@@ -102,7 +102,7 @@ export const RegistrationStatusCard = () => {
           <Button
             fullWidth
             variant="contained"
-            href="#register"
+            href="/spotRegistration"
             sx={{
               background: "#620b38",
               fontWeight: "bold",
@@ -137,7 +137,7 @@ export const RegistrationStatusCard = () => {
               "&:hover": { backgroundColor: "rgba(98, 11, 56, 0.1)" },
             }}
           >
-            <Link href="#contact" passHref legacyBehavior>
+            <Link href="/spotRegistration" passHref legacyBehavior>
               <Box
                 component="a"
                 sx={{

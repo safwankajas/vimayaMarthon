@@ -260,7 +260,7 @@ export const Header: React.FC<HeaderProps> = ({ register }) => {
             </Box>
 
             <Button
-              href={isOnHomePage ? "#register" : "/#register"}
+              href={isOnHomePage ? "/spotRegistration" : "/spotRegistration"}
               variant="contained"
               sx={{
                 backgroundColor: textColor,
