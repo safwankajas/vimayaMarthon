@@ -30,7 +30,7 @@ const Register = () => {
       { imgSrc: "/offer.png", label: "Attractive Offer coupons" },
     ],
     imageSrc: "/05-category.jpg", // Image path for 5K
-    registerLink: "https://feebook.southindianbank.com/FeeBookUser/org?id=1019", // Replace with the actual registration link
+    registerLink: "/spotRegistration", // Replace with the actual registration link
   };
 
   return (
